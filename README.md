@@ -1,2 +1,1 @@
-# CryptoKitties
-A clone of the crypto game CryptoKitties
+Ivan on Tech project
