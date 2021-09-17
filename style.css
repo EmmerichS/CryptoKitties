@@ -1,0 +1,20 @@
+#head {
+    position: absolute;
+    top: 50px;
+    background-color: rgb(53, 27, 126);
+    height: 200px;
+    width: 250px;
+    border-radius: 47%;
+}
+#eyes{
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.eye {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
