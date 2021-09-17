@@ -1,6 +1,10 @@
+#cat {  
+    position:absolute;  
+    top: 50px;
+}
 #head {
     position: absolute;
-    top: 50px;
+    top: 8px;
     background-color: rgb(53, 27, 126);
     height: 200px;
     width: 250px;
@@ -24,4 +28,20 @@
     width: 20px;
     border-radius: 50%;
     margin: 3px 18px;
+}
+.ears{
+    position: relative;
+}
+.ear {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: hotpink;
+    border-radius: 90% 0 90% 0;
+}
+.left_ear {
+    transform: scale(1,-1);
+}
+.right_ear {
+    left: 150px;
 }
