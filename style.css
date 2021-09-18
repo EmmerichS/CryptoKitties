@@ -1,11 +1,12 @@
 #cat {  
     position:absolute;  
     top: 50px;
+    left: 50px;
 }
 #head {
     position: absolute;
-    top: 8px;
-    background-color: rgb(53, 27, 126);
+    top: 10px;
+    background-color: rgb(59, 50, 126);
     height: 200px;
     width: 250px;
     border-radius: 47%;
@@ -34,16 +35,17 @@
 }*/
 .ear {
     position: absolute;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     background-color: hotpink;
-    border-radius: 90% 0 90% 0;
+    border-radius: 90px 0px 80px 0px;
 }
 .left_ear {
-    transform: scale(1,-1);
+    border-radius: 0px 90px 0px 80px;
 }
 .right_ear {
-    left: 150px;
+    left: 130px;
+    border-radius: 90px 0px 80px 0px;
 }
 #mouth_area{
     position: absolute;
