@@ -109,16 +109,16 @@
 #body {
     position: absolute;
     top: 242px;
-    left: 240px;
+    left: 250px;
     background-color: rgb(59, 50, 126);
-    height: 350px;
-    width: 270px;
-    border-radius: 40% 40% 10% 10%;
+    height: 340px;
+    width: 250px;
+    border-radius: 40% 40% 15% 15%;
 }
 #tummy {
     position: absolute;
     top: 64px;
-    left: 70px;
+    left: 60px;
     background-color: rgb(59 107 160);
     height: 200px;
     width: 130px;
@@ -136,22 +136,22 @@
 }
 #left_foot {
     background-color: hotpink;
-    height: 62px;
-    width: 136px;
-    border-radius: 80% 10% 10% 10%;
+    height: 55px;
+    width: 127px;
+    border-radius: 80% 30px 15% 20%;
 }
 #right_foot {
     background-color: hotpink;
-    height: 62px;
-    width: 136px;
-    border-radius: 10% 80% 10% 10%;
+    height: 55px;
+    width: 127px;
+    border-radius: 30px 80% 20% 15%;
 }
 #left_arm {
     position: absolute;
-    top: 266px;
+    top: 234px;
     left: 130px;
     background-color: rgb(59, 50, 126);
-    height: 86px;
+    height: 80px;
     width: 200px;
     border-radius: 45%;
     transform: rotate(40deg);
@@ -164,4 +164,14 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+#right_arm {
+    position: absolute;
+    top: 282px;
+    left: 452px;
+    background-color: rgb(59, 50, 126);
+    height: 200px;
+    width: 80px;
+    border-radius: 53%;
+    transform: rotate(-14deg);
 }
