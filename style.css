@@ -113,7 +113,7 @@
     background-color: rgb(59, 50, 126);
     height: 340px;
     width: 250px;
-    border-radius: 40% 40% 15% 15%;
+    border-radius: 40% 40% 47% 47%;
 }
 #tummy {
     position: absolute;
@@ -122,14 +122,14 @@
     background-color: rgb(59 107 160);
     height: 200px;
     width: 130px;
-    border-radius: 40% 40% 10% 10%;
+    border-radius: 45%;
 }
 #feet {
     position: absolute;
-    top: 516px;
-    left: 125px;
+    top: 500px;
+    left: 190px;
     height: 100px;
-    width: 500px;
+    width: 370px;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -138,13 +138,13 @@
     background-color: hotpink;
     height: 55px;
     width: 127px;
-    border-radius: 80% 30px 15% 20%;
+    border-radius: 30px 80% 20% 15%;
 }
 #right_foot {
     background-color: hotpink;
     height: 55px;
     width: 127px;
-    border-radius: 30px 80% 20% 15%;
+    border-radius: 80% 30px 15% 20%;
 }
 #left_arm {
     position: absolute;
