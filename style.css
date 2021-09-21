@@ -111,7 +111,7 @@
     top: 242px;
     left: 240px;
     background-color: rgb(59, 50, 126);
-    height: 365px;
+    height: 350px;
     width: 270px;
     border-radius: 40% 40% 10% 10%;
 }
@@ -136,13 +136,32 @@
 }
 #left_foot {
     background-color: hotpink;
-    height: 67px;
-    width: 150px;
+    height: 62px;
+    width: 136px;
     border-radius: 80% 10% 10% 10%;
 }
 #right_foot {
     background-color: hotpink;
-    height: 67px;
-    width: 150px;
+    height: 62px;
+    width: 136px;
     border-radius: 10% 80% 10% 10%;
+}
+#left_arm {
+    position: absolute;
+    top: 266px;
+    left: 130px;
+    background-color: rgb(59, 50, 126);
+    height: 86px;
+    width: 200px;
+    border-radius: 45%;
+    transform: rotate(40deg);
+}
+#paw {
+    background-color: hotpink;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
