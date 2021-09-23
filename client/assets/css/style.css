@@ -1,13 +1,12 @@
 #cat {  
     position: relative;  
-    background-color: grey;
-    height: 700px;
-    width: 800px;
+    height: 620px;
+    width: 420px;
 }
 #head {
     position: absolute;
     top: 60px;
-    left: 250px;
+    left: 120px;
     background-color: rgb(59, 50, 126);
     height: 200px;
     width: 250px;
@@ -41,10 +40,10 @@
 }
 .left_ear {
     border-radius: 0px 90px 0px 80px;
-    left: 250px;
+    left: 120px;
 }
 .right_ear {
-    left: 380px;
+    left: 250px;
     border-radius: 90px 0px 80px 0px;
 }
 #mouth_area{
@@ -104,7 +103,7 @@
 #body {
     position: absolute;
     top: 242px;
-    left: 250px;
+    left: 120px;
     background-color: rgb(59, 50, 126);
     height: 340px;
     width: 250px;
@@ -122,7 +121,7 @@
 #feet {
     position: absolute;
     top: 495px;
-    left: 190px;
+    left: 60px;
     height: 100px;
     width: 370px;
     display: flex;
@@ -146,7 +145,6 @@
 #left_arm {
     position: absolute;
     top: 234px;
-    left: 130px;
     background-color: rgb(59, 50, 126);
     height: 80px;
     width: 200px;
@@ -165,7 +163,7 @@
 #right_arm {
     position: absolute;
     top: 282px;
-    left: 452px;
+    left: 322px;
     background-color: rgb(59, 50, 126);
     height: 200px;
     width: 80px;
