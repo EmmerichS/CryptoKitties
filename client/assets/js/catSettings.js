@@ -58,3 +58,8 @@ $('#bodycolor').change(()=>{
     var colorVal = $('#bodycolor').val()
     headColor(colors[colorVal],colorVal)
 })
+// Changing Ear, paw and feet colors
+$('#earPawFeetcolor').change(()=>{
+  var colorVal = $('#earPawFeetcolor').val()
+  earPawFeetColor(colors[colorVal],colorVal)
+})

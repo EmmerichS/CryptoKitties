@@ -15,10 +15,16 @@ function genColors(){
 }
 
 //This function code needs to modified so that it works with Your cat code.
-function headColor(color,code) {
+function headColor(color, code) {
     $('#body, #left_arm, #right_arm, #head').css('background', '#' + color)  //This changes the color of the cat
     $('#headcode').html('code: '+ code) //This updates text of the badge next to the slider
     $('#dnabody').html(code) //This updates the body color part of the DNA that is displayed below the cat
+}
+
+function earPawFeetColor(color, code) {
+    $('#paw').css('background', '#' + color)
+    $('#earPawFeetcode').html('code: '+ code)
+    $('#dnaears').html(code)
 }
 
 
