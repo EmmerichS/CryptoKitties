@@ -16,7 +16,7 @@ function genColors(){
 
 //This function code needs to modified so that it works with Your cat code.
 function headColor(color, code) {
-    $('#body, #head').css('background', '#' + color)  //This changes the color of the cat
+    $('#body, #left_arm, #right_arm, #head').css('background', '#' + color)  //This changes the color of the cat
     $('#headcode').html('code: ' + code) //This updates text of the badge next to the slider
     $('#dnabody').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
@@ -34,7 +34,7 @@ function tummyMouthAreaColor(color, code) {
 }
 
 function eyeColor(color, code) {
-    $('.eye, #left_arm, #right_arm ').css('background', '#' + color)
+    $('.eye').css('background', '#' + color)
     $('#eyecode').html('code: ' + code)
     $('#dnaeyes').html(code)
 }
