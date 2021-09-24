@@ -17,14 +17,26 @@ function genColors(){
 //This function code needs to modified so that it works with Your cat code.
 function headColor(color, code) {
     $('#body, #left_arm, #right_arm, #head').css('background', '#' + color)  //This changes the color of the cat
-    $('#headcode').html('code: '+ code) //This updates text of the badge next to the slider
+    $('#headcode').html('code: ' + code) //This updates text of the badge next to the slider
     $('#dnabody').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
 
 function earPawFeetColor(color, code) {
-    $('#paw').css('background', '#' + color)
-    $('#earPawFeetcode').html('code: '+ code)
+    $('#paw, #left_foot, #right_foot, .ear').css('background', '#' + color)
+    $('#earPawFeetcode').html('code: ' + code)
     $('#dnaears').html(code)
+}
+
+function tummyMouthAreaColor(color, code) {
+    $('#mouth_area, #tummy').css('background', '#' + color)
+    $('#tummyMouthAreacode').html('code: ' + code)
+    $('#dnatummy').html(code)
+}
+
+function eyeColor(color, code) {
+    $('.eye').css('background', '#' + color)
+    $('#eyecode').html('code: ' + code)
+    $('#dnaeyes').html(code)
 }
 
 

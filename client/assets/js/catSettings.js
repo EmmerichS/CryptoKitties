@@ -56,10 +56,20 @@ function renderCat(dna){
 // Changing cat colors
 $('#bodycolor').change(()=>{
     var colorVal = $('#bodycolor').val()
-    headColor(colors[colorVal],colorVal)
+    headColor(colors[colorVal], colorVal)
 })
 // Changing Ear, paw and feet colors
 $('#earPawFeetcolor').change(()=>{
-  var colorVal = $('#earPawFeetcolor').val()
-  earPawFeetColor(colors[colorVal],colorVal)
+    var colorVal = $('#earPawFeetcolor').val()
+    earPawFeetColor(colors[colorVal], colorVal)
+})
+//Changing Tummy and Mouth Area colors
+$('#tummyMouthAreacolor').change(()=>{
+    var colorVal = $('#tummyMouthAreacolor').val()
+    tummyMouthAreaColor(colors[colorVal], colorVal)
+})
+//Changing the Eye color
+$('#eyecolor').change(()=>{
+    var colorVal = $('#eyecolor').val()
+    eyeColor(colors[colorVal], colorVal)
 })
