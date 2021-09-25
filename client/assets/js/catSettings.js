@@ -3,9 +3,9 @@ var colors = Object.values(allColors())
 
 var defaultDNA = {
     "bodyColor" : 20,   //My own value
+    "earsColor" : 31,   //My own value
     "mouthColor" : 14,  //My own value
     "eyesColor" : 66,   //My own value
-    "earsColor" : 31,   //My own value
     //Cattributes
     "eyesShape" : 1,
     "decorationPattern" : 1,
@@ -17,10 +17,10 @@ var defaultDNA = {
 
 // when page load
 $( document ).ready(function() {
-  $('#dnabody').html(defaultDNA.headColor);
+  $('#dnabody').html(defaultDNA.bodyColor);  
+  $('#dnaears').html(defaultDNA.earsColor);
   $('#dnamouth').html(defaultDNA.mouthColor);
   $('#dnaeyes').html(defaultDNA.eyesColor);
-  $('#dnaears').html(defaultDNA.earsColor);
     
 //   $('#dnashape').html(defaultDNA.eyesShape)
 //   $('#dnadecoration').html(defaultDNA.decorationPattern)
@@ -49,14 +49,14 @@ function getDna(){
 }
 
 function renderCat(dna){
-    headColor(colors[dna.bodyColor],dna.bodyColor)
+    headColor(colors[dna.bodyColor], dna.bodyColor)
     $('#bodycolor').val(dna.bodyColor)
-    earPawFeetColor(colors[dna.earsColor],dna.earsColor)
-    $('#earPawFeetColor').val(dna.earsColor)
-    tummyMouthAreaColor(colors[dna.mouthColor],dna.mouthColor)
+    earPawFeetColor(colors[dna.earsColor], dna.earsColor)
+    $('#earPawFeetcolor').val(dna.earsColor)
+    tummyMouthAreaColor(colors[dna.mouthColor], dna.mouthColor)
     $('#tummyMouthAreacolor').val(dna.mouthColor)
-    eyeColor(colors[dna.eyesColor],dna.eyesColor)
-    $('#eyeColor').val(dna.eyesColor)
+    eyeColor(colors[dna.eyesColor], dna.eyesColor)
+    $('#eyecolor').val(dna.eyesColor)
 }
 
 
