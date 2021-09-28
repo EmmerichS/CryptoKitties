@@ -60,6 +60,14 @@ function eyeVariation(num) {
     }
 }
 
+async function normalEyes() {
+    await $('.eye').find('div').css('border', 'none')
+}
+
+async function roundEyes() {
+    await $('.eye').find('div').css('width', '50px')
+}
+
 function decorationVariation(num) {
     $('#dnadecoration').html(num)
     switch (num) {
@@ -68,14 +76,6 @@ function decorationVariation(num) {
             normaldecoration()
             break
     }
-}
-
-async function normalEyes() {
-    await $('.eye').find('div').css('border', 'none')
-}
-
-async function roundEyes() {
-    await $('.eye').find('div').css('width', '50px')
 }
 
 async function normaldecoration() {
