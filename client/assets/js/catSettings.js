@@ -22,12 +22,12 @@ $( document ).ready(function() {
   $('#dnamouth').html(defaultDNA.mouthColor);
   $('#dnaeyes').html(defaultDNA.eyesColor);
     
-//   $('#dnashape').html(defaultDNA.eyesShape)
-//   $('#dnadecoration').html(defaultDNA.decorationPattern)
-//   $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
-//   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
-//   $('#dnaanimation').html(defaultDNA.animation)
-//   $('#dnaspecial').html(defaultDNA.lastNum)
+  $('#dnashape').html(defaultDNA.eyesShape)
+  $('#dnadecoration').html(defaultDNA.decorationPattern)
+  $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
+  $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
+  $('#dnaanimation').html(defaultDNA.animation)
+  $('#dnaspecial').html(defaultDNA.lastNum)
 
   renderCat(defaultDNA)
 });
@@ -57,6 +57,8 @@ function renderCat(dna){
     $('#tummyMouthAreacolor').val(dna.mouthColor)
     eyeColor(colors[dna.eyesColor], dna.eyesColor)
     $('#eyecolor').val(dna.eyesColor)
+    eyeVariation(dna.eyesShape)
+    $('#eyeshape').val(dna.eyesShape)
 }
 
 
@@ -80,4 +82,9 @@ $('#tummyMouthAreacolor').change(()=>{
 $('#eyecolor').change(()=>{
     var colorVal = $('#eyecolor').val()
     eyeColor(colors[colorVal], colorVal)
+})
+//Changing the Eye shape
+$('#eyeshape').change(()=>{
+    var shape = $('#eyeshape').val()
+    eyeVariation(shape)
 })

@@ -46,10 +46,16 @@ function eyeColor(color, code) {
 function eyeVariation(num) {
 
     $('#dnashape').html(num)
+
     switch (num) {
         case 1:
             normalEyes()
             $('#eyeName').html('Basic')
+            break
+        case 2:
+            normalEyes()
+            $('#eyeName').html('Round')
+            roundEyes()
             break
     }
 }
@@ -65,7 +71,11 @@ function decorationVariation(num) {
 }
 
 async function normalEyes() {
-    await $('.cat__eye').find('span').css('border', 'none')
+    await $('.eye').find('div').css('border', 'none')
+}
+
+async function roundEyes() {
+    await $('.eye').find('div').css('width', '50px')
 }
 
 async function normaldecoration() {
