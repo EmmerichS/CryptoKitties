@@ -33,6 +33,14 @@
     width: 20px;
     border-radius: 50%;
 }
+/*
+.left_pupil {
+    transform: rotate(-45deg);    
+}
+.right_pupil {
+    transform: rotate(45deg);
+}
+*/
 .ear {
     position: absolute;
     top: 50px;

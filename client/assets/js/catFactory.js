@@ -62,20 +62,71 @@ function eyeVariation(num) {
             $('#eyeBadgeName').html('Right')
             rightEyes()
             break
+        case 4:
+            normalEyes()
+            $('#eyeBadgeName').html('Left')
+            leftEyes()
+            break  
+        case 5:
+            normalEyes()
+            $('#eyeBadgeName').html('Small')
+            smallEyes()
+            break
+        case 6:
+            normalEyes()
+            $('#eyeBadgeName').html('Chinese')
+            chineseEyes()
+            break
+        case 7:
+            normalEyes()
+            $('#eyeBadgeName').html('Stoner')
+            stonerEyes()
+            break
+        case 8: 
+            normalEyes()
+            $('#eyeBadgeName').html('Wink')
+            winkEyes()
+            break
     }
 }
 
-async function normalEyes() {
-    await $('.eye').find('div').css('width', '20px')
+function normalEyes() {
+     $('.eye').css('justify-content', 'center')
+     $('.eye').find('div').css('width', '20px')
+     $('.eye').find('div').css('height', '50px')
+     $('.left_pupil').css('transform', 'rotate(0deg)')
+     $('.right_pupil').css('transform', 'rotate(0deg)')
 }
 
-async function roundEyes() {
-    await $('.eye').find('div').css('width', '51px')
+function roundEyes() {
+     $('.eye').find('div').css('width', '51px')
 }
 
 //css({"propertyname":"value","propertyname":"value",...});
-async function rightEyes() {
-    await $('.eye').find('div').css({'width':'35px', 'justify-content':'flex-end'})
+function rightEyes() {
+     $('.eye').css('justify-content', 'flex-end')
+}
+
+function leftEyes() {
+     $('.eye').css('justify-content', 'flex-start')
+}
+
+function smallEyes() {
+    $('.eye').find('div').css('height', '20px')
+}
+
+function chineseEyes() {
+    $('.left_pupil').css('transform', 'rotate(-45deg)')
+    $('.right_pupil').css('transform', 'rotate(45deg)')
+}
+
+function stonerEyes() {
+    $('.left_pupil').css('transform', 'rotate(45deg)')
+    $('.right_pupil').css('transform', 'rotate(-45deg)')
+}
+
+function winkEyes() {
+    $('.left_pupil').css({'height':'5px', 'width':'50px'})
 }
 
 function decorationVariation(num) {
