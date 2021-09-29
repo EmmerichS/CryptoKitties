@@ -50,22 +50,32 @@ function eyeVariation(num) {
     switch (num) {
         case 1:
             normalEyes()
-            $('#eyeName').html('Basic')
+            $('#eyeBadgeName').html('Basic')
             break
         case 2:
             normalEyes()
-            $('#eyeName').html('Round')
-            roundEyes()
+            $('#eyeBadgeName').html('Round')
+            roundEyes()          
+            break
+        case 3:
+            normalEyes()
+            $('#eyeBadgeName').html('Right')
+            rightEyes()
             break
     }
 }
 
 async function normalEyes() {
-    await $('.eye').find('div').css('border', 'none')
+    await $('.eye').find('div').css('width', '20px')
 }
 
 async function roundEyes() {
-    await $('.eye').find('div').css('width', '50px')
+    await $('.eye').find('div').css('width', '51px')
+}
+
+//css({"propertyname":"value","propertyname":"value",...});
+async function rightEyes() {
+    await $('.eye').find('div').css({'width':'35px', 'justify-content':'flex-end'})
 }
 
 function decorationVariation(num) {

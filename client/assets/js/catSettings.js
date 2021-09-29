@@ -85,6 +85,6 @@ $('#eyecolor').change(()=>{
 })
 //Changing the Eye shape
 $('#eyeshape').change(()=>{
-    var shape = $('#eyeshape').val()
+    var shape = parseInt($('#eyeshape').val())
     eyeVariation(shape)
 })
