@@ -49,53 +49,58 @@ function eyeVariation(num) {
 
     switch (num) {
         case 1:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Basic')
             break
         case 2:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Round')
             roundEyes()          
             break
         case 3:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Right')
             rightEyes()
             break
         case 4:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Left')
             leftEyes()
             break  
         case 5:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Small')
             smallEyes()
             break
         case 6:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Chinese')
             chineseEyes()
             break
         case 7:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Stoner')
             stonerEyes()
             break
         case 8: 
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Wink')
             winkEyes()
             break
         case 9:
-            normalEyes()
+            resetEyes()
             $('#eyeBadgeName').html('Dead')
             deadEyes()
+            break
+        case 10:
+            resetEyes()
+            $('#eyeBadgeName').html('Squint')
+            squintEyes()
             break
     }
 }
 
-function normalEyes() {
+function resetEyes() {
      $('.eye').css('justify-content', 'center')
      $('.eye').find('div').css('width', '20px')
      $('.eye').find('div').css('height', '50px')
@@ -104,6 +109,11 @@ function normalEyes() {
      $('.eye').find('div').css('border-radius', '50%')
      $('.left_pupil2').css('transform', 'rotate(0deg)')
      $('.right_pupil2').css('transform', 'rotate(0deg)')
+
+     //TO FIX...
+     $('.eye').css('display', 'flex')
+     $('.left_pupil').css({'position':'none', 'top':'none', 'left':'none'})
+     $('.right_pupil').css({'position':'none', 'top':'none'})
 }
 
 function roundEyes() {
@@ -143,6 +153,15 @@ function deadEyes() {
     $('.left_pupil2').css('transform', 'rotate(90deg)')
     $('.right_pupil2').css('transform', 'rotate(90deg)')
 
+}
+
+
+//TO FIX...
+function squintEyes() {
+    $('.eye').css('display', 'block')
+    $('.left_pupil').css({'position':'relative', 'top':'3px', 'left':'36px'})
+    $('.right_pupil').css({'position':'relative', 'top':'3px'})
+    
 }
 
 function decorationVariation(num) {
