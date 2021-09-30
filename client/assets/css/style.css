@@ -24,7 +24,6 @@
     width: 56px;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .pupil {

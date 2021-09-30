@@ -110,10 +110,14 @@ function resetEyes() {
      $('.left_pupil2').css('transform', 'rotate(0deg)')
      $('.right_pupil2').css('transform', 'rotate(0deg)')
 
+
+     //$('.eye_left').css({'display':'flex', 'justify-content':'flex-end', 'align-items':'center'})
+     //$('.eye_right').css({'display':'flex', 'justify-content':'flex-start', 'align-items':'center'})
+
      //TO FIX...
-     $('.eye').css('display', 'flex')
-     $('.left_pupil').css({'position':'none', 'top':'none', 'left':'none'})
-     $('.right_pupil').css({'position':'none', 'top':'none'})
+     //$('.eye').css('display', 'flex')
+     //$('.left_pupil').css({'position':'none', 'top':'none', 'left':'none'})
+     //$('.right_pupil').css({'position':'none', 'top':'none'})
 }
 
 function roundEyes() {
@@ -158,9 +162,11 @@ function deadEyes() {
 
 //TO FIX...
 function squintEyes() {
-    $('.eye').css('display', 'block')
-    $('.left_pupil').css({'position':'relative', 'top':'3px', 'left':'36px'})
-    $('.right_pupil').css({'position':'relative', 'top':'3px'})
+    $('.eye_left').css({'display':'flex', 'justify-content':'flex-end', 'align-items':'center'})
+    $('.eye_right').css({'display':'flex', 'justify-content':'flex-start', 'align-items':'center'})
+    //$('.eye').css('display', 'block')
+    //$('.left_pupil').css({'position':'relative', 'top':'3px', 'left':'36px'})
+    //$('.right_pupil').css({'position':'relative', 'top':'3px'})
     
 }
 
