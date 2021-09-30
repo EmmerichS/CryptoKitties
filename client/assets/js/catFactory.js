@@ -87,6 +87,11 @@ function eyeVariation(num) {
             $('#eyeBadgeName').html('Wink')
             winkEyes()
             break
+        case 9:
+            normalEyes()
+            $('#eyeBadgeName').html('Dead')
+            deadEyes()
+            break
     }
 }
 
@@ -96,6 +101,9 @@ function normalEyes() {
      $('.eye').find('div').css('height', '50px')
      $('.left_pupil').css('transform', 'rotate(0deg)')
      $('.right_pupil').css('transform', 'rotate(0deg)')
+     $('.eye').find('div').css('border-radius', '50%')
+     $('.left_pupil2').css('transform', 'rotate(0deg)')
+     $('.right_pupil2').css('transform', 'rotate(0deg)')
 }
 
 function roundEyes() {
@@ -127,6 +135,14 @@ function stonerEyes() {
 
 function winkEyes() {
     $('.left_pupil').css({'height':'5px', 'width':'50px'})
+    $('.left_pupil2').css('height', '0px')
+}
+
+function deadEyes() {
+    $('.eye').find('div').css({'border-radius': '0%', 'transform':'rotate(45deg'})
+    $('.left_pupil2').css('transform', 'rotate(90deg)')
+    $('.right_pupil2').css('transform', 'rotate(90deg)')
+
 }
 
 function decorationVariation(num) {
