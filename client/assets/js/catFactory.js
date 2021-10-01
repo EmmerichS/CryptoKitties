@@ -196,9 +196,17 @@ function decorationVariation(num) {
             resetDecoration()
             $('#decorationBadgeName').html('Square')
             squareDecoration()
-            break               
-              
-
+            break     
+        case 9:
+            resetDecoration()
+            $('#decorationBadgeName').html('Opposite')
+            oppositeDecoration()
+            break   
+        case 10:
+            resetDecoration()
+            $('#decorationBadgeName').html('Random')
+            randomDecoration()
+            break                        
     }
 }
 
@@ -250,4 +258,16 @@ function squareDecoration() {
     $('#top_decoration').css('border-radius', '0px')
     $('#middle_decoration').css('border-radius', '0px')
     $('#bottom_decoration').css('border-radius', '0px')
+}
+
+function oppositeDecoration() {
+    $('#top_decoration').css('width', '100px')
+    $('#middle_decoration').css('width', '60px')
+    $('#bottom_decoration').css('width', '100px')
+}
+
+function randomDecoration() {
+    $('#top_decoration').css({'width':'35px', 'height':'35px'})
+    $('#middle_decoration').css('border-radius', '0%')
+    $('#bottom_decoration').css({'width':'20px', 'height':'60px'})
 }
