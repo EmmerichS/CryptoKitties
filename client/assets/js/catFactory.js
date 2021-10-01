@@ -187,6 +187,17 @@ function decorationVariation(num) {
             $('#decorationBadgeName').html('Edgy')
             edgyDecoration()
             break
+        case 7:
+            resetDecoration()
+            $('#decorationBadgeName').html('Vertical')
+            verticalDecoration()
+            break
+        case 8:
+            resetDecoration()
+            $('#decorationBadgeName').html('Square')
+            squareDecoration()
+            break               
+              
 
     }
 }
@@ -194,7 +205,7 @@ function decorationVariation(num) {
 function resetDecoration() {
     //Remove all style from other decorations
     //In this way we can also use normalDecoration() to reset the decoration style   
-    $('#decoration').css('justify-content', 'space-evenly')
+    $('#decoration').css({'justify-content':'space-evenly', 'flex-direction':'column'})
     $('#top_decoration').css({'width':'60px', 'height':'20px', 'border-radius':'50%'})
     $('#middle_decoration').css({'width':'100px', 'height':'20px', 'border-radius':'50%'})
     $('#bottom_decoration').css({'width':'60px', 'height':'20px', 'border-radius':'50%'})
@@ -226,4 +237,17 @@ function edgyDecoration() {
     $('#top_decoration').css({'width':'60px', 'height':'35px', 'border-radius':'50% 50% 100% 100%'})
     $('#middle_decoration').css({'width':'100px', 'height':'40px', 'border-radius':'38%'})
     $('#bottom_decoration').css({'width':'60px', 'height':'35px', 'border-radius':'100% 100% 50% 50%'}) 
+}
+
+function verticalDecoration() {
+    $('#decoration').css({'flex-direction':'row', 'justify-content':'space-between'})
+    $('#top_decoration').css({'width':'20px', 'height':'80px'})
+    $('#middle_decoration').css({'width':'25px', 'height':'130px'})
+    $('#bottom_decoration').css({'width':'20px', 'height':'80px'})
+}
+
+function squareDecoration() {
+    $('#top_decoration').css('border-radius', '0px')
+    $('#middle_decoration').css('border-radius', '0px')
+    $('#bottom_decoration').css('border-radius', '0px')
 }
