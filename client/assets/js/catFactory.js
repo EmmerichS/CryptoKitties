@@ -102,22 +102,11 @@ function eyeVariation(num) {
 
 function resetEyes() {
      $('.eye').css('justify-content', 'center')
-     $('.eye').find('div').css('width', '20px')
-     $('.eye').find('div').css('height', '50px')
+     $('.eye').find('div').css({'width':'20px', 'height':'50px', 'border-radius':'50%'})
      $('.left_pupil').css('transform', 'rotate(0deg)')
      $('.right_pupil').css('transform', 'rotate(0deg)')
-     $('.eye').find('div').css('border-radius', '50%')
      $('.left_pupil2').css('transform', 'rotate(0deg)')
      $('.right_pupil2').css('transform', 'rotate(0deg)')
-
-
-     //$('.eye_left').css({'display':'flex', 'justify-content':'flex-end', 'align-items':'center'})
-     //$('.eye_right').css({'display':'flex', 'justify-content':'flex-start', 'align-items':'center'})
-
-     //TO FIX...
-     //$('.eye').css('display', 'flex')
-     //$('.left_pupil').css({'position':'none', 'top':'none', 'left':'none'})
-     //$('.right_pupil').css({'position':'none', 'top':'none'})
 }
 
 function roundEyes() {
@@ -159,15 +148,9 @@ function deadEyes() {
 
 }
 
-
-//TO FIX...
 function squintEyes() {
     $('.eye_left').css({'display':'flex', 'justify-content':'flex-end', 'align-items':'center'})
     $('.eye_right').css({'display':'flex', 'justify-content':'flex-start', 'align-items':'center'})
-    //$('.eye').css('display', 'block')
-    //$('.left_pupil').css({'position':'relative', 'top':'3px', 'left':'36px'})
-    //$('.right_pupil').css({'position':'relative', 'top':'3px'})
-    
 }
 
 function decorationVariation(num) {
