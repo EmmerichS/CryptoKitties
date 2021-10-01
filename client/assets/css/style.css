@@ -32,15 +32,6 @@
     width: 20px;
     border-radius: 50%;
 }
-
-/*
-.left_pupil {
-       
-}
-.right_pupil {
-    transform: rotate(45deg);
-}
-*/
 .ear {
     position: absolute;
     top: 50px;
@@ -239,7 +230,7 @@
     background-color: #000;
     height: 20px;
     width: 60px;
-    border-radius: 50% 50% 50% 50%;
+    border-radius: 50%;
 }
 #middle_decoration {
     background-color: #000;

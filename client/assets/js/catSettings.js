@@ -59,6 +59,8 @@ function renderCat(dna){
     $('#eyecolor').val(dna.eyesColor)
     eyeVariation(dna.eyesShape)
     $('#eyeshape').val(dna.eyesShape)
+    decorationVariation(dna.decorationPattern)
+    $('#decorationshape').val(dna.decorationPattern)
 }
 
 
@@ -87,4 +89,9 @@ $('#eyecolor').change(()=>{
 $('#eyeshape').change(()=>{
     var shape = parseInt($('#eyeshape').val())
     eyeVariation(shape)
+})
+//Changing the tummy decoration
+$('#decorationshape').change(()=>{
+    var shape = parseInt($('#decorationshape').val())
+    decorationVariation(shape)
 })

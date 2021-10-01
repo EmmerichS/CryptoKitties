@@ -39,10 +39,8 @@ function eyeColor(color, code) {
     $('#dnaeyes').html(code)
 }
 
+//Changes the shape of the eyes
 
-//###################################################
-//Functions below will be used later on in the project
-//###################################################
 function eyeVariation(num) {
 
     $('#dnashape').html(num)
@@ -153,20 +151,79 @@ function squintEyes() {
     $('.eye_right').css({'display':'flex', 'justify-content':'flex-start', 'align-items':'center'})
 }
 
+//Changes the shape of the tummy decoration
+
 function decorationVariation(num) {
+
     $('#dnadecoration').html(num)
+
     switch (num) {
         case 1:
-            $('#decorationName').html('Basic')
-            normaldecoration()
+            $('#decorationBadgeName').html('Basic')
+            resetDecoration()
             break
+        case 2:
+            resetDecoration()
+            $('#decorationBadgeName').html('Apart')
+            apartDecoration()
+            break
+        case 3:
+            resetDecoration()
+            $('#decorationBadgeName').html('Pyramid')   
+            pyramidDecoration()
+            break
+        case 4:
+            resetDecoration()
+            $('#decorationBadgeName').html('Fat')
+            fatDecoration()
+            break
+        case 5:
+            resetDecoration()
+            $('#decorationBadgeName').html('Circle')
+            circleDecoration()
+            break
+        case 6:
+            resetDecoration()
+            $('#decorationBadgeName').html('Edgy')
+            edgyDecoration()
+            break
+
     }
 }
 
-async function normaldecoration() {
+function resetDecoration() {
     //Remove all style from other decorations
-    //In this way we can also use normalDecoration() to reset the decoration style
-    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
-    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
-    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+    //In this way we can also use normalDecoration() to reset the decoration style   
+    $('#decoration').css('justify-content', 'space-evenly')
+    $('#top_decoration').css({'width':'60px', 'height':'20px', 'border-radius':'50%'})
+    $('#middle_decoration').css({'width':'100px', 'height':'20px', 'border-radius':'50%'})
+    $('#bottom_decoration').css({'width':'60px', 'height':'20px', 'border-radius':'50%'})
+}
+
+function apartDecoration() {
+    $('#decoration').css('justify-content', 'space-between')
+}
+
+function pyramidDecoration() {
+    $('#top_decoration').css('width', '30px')
+    $('#middle_decoration').css('width', '60px')
+    $('#bottom_decoration').css('width', '90px')
+}
+
+function fatDecoration() {
+    $('#top_decoration').css('height', '35px')
+    $('#middle_decoration').css('height', '40px')
+    $('#bottom_decoration').css('height', '35px') 
+}
+
+function circleDecoration() {
+    $('#top_decoration').css({'width':'35px', 'height':'35px'})
+    $('#middle_decoration').css({'width':'75px', 'height':'75px'})
+    $('#bottom_decoration').css({'width':'35px', 'height':'35px'})
+}
+
+function edgyDecoration() {
+    $('#top_decoration').css({'width':'60px', 'height':'35px', 'border-radius':'50% 50% 100% 100%'})
+    $('#middle_decoration').css({'width':'100px', 'height':'40px', 'border-radius':'38%'})
+    $('#bottom_decoration').css({'width':'60px', 'height':'35px', 'border-radius':'100% 100% 50% 50%'}) 
 }
