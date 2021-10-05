@@ -278,3 +278,10 @@ function topBottomDecorationColor(color, code) {
     $('#topBottomDecorationcode').html('code: ' + code)
     $('#dnadecorationTopBottom').html(code)
 }
+
+//Middle Decoration colour changer
+function middleDecorationColor(color, code) {
+    $('#middle_decoration').css('background', '#' + color)
+    $('#middleDecorationcode').html('code: ' + code)
+    $('#dnadecorationMiddle').html(code)
+}

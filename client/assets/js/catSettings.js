@@ -10,7 +10,7 @@ var defaultDNA = {
     "eyesShape" : 1,
     "decorationPattern" : 1,
     "decorationTopBottomColor" : 16,
-    "decorationMiddleColor" : 13,
+    "decorationMiddleColor" : 25,
     "animation" :  1,
     "lastNum" :  1
     }
@@ -63,6 +63,8 @@ function renderCat(dna){
     $('#decorationshape').val(dna.decorationPattern)
     topBottomDecorationColor(colors[dna.decorationTopBottomColor], dna.decorationTopBottomColor)
     $('#topBottomDecorationcolor').val(dna.decorationTopBottomColor)
+    middleDecorationColor(colors[dna.decorationMiddleColor], dna.decorationMiddleColor)
+    $('#middleDecorationcolor').val(dna.decorationMiddleColor)
 }
 
 
@@ -101,4 +103,9 @@ $('#decorationshape').change(()=>{
 $('#topBottomDecorationcolor').change(()=>{
     var colorVal = $('#topBottomDecorationcolor').val()
     topBottomDecorationColor(colors[colorVal], colorVal)
+})
+//Changing the Middle Decoration colour
+$('#middleDecorationcolor').change(()=>{
+    var colorVal = $('#middleDecorationcolor').val()
+    middleDecorationColor(colors[colorVal], colorVal)
 })
