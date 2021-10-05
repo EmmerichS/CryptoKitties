@@ -285,3 +285,16 @@ function middleDecorationColor(color, code) {
     $('#middleDecorationcode').html('code: ' + code)
     $('#dnadecorationMiddle').html(code)
 }
+
+//Animation
+function animationVariation(num) {
+
+    $('#dnaanimation').html(num)
+
+    switch (num) {
+        case 1:
+            resetAnimation()
+            $('#animationcode').html('Basic')
+
+    }
+}
