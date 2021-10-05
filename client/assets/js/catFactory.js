@@ -271,3 +271,10 @@ function randomDecoration() {
     $('#middle_decoration').css('border-radius', '0%')
     $('#bottom_decoration').css({'width':'20px', 'height':'60px'})
 }
+
+//Top and Bottom Decoration Colour changer
+function topBottomDecorationColor(color, code) {
+    $('#top_decoration, #bottom_decoration').css('background', '#' + color)
+    $('#topBottomDecorationcode').html('code: ' + code)
+    $('#dnadecorationTopBottom').html(code)
+}
