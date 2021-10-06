@@ -295,6 +295,20 @@ function animationVariation(num) {
         case 1:
             resetAnimation()
             $('#animationcode').html('Basic')
+            break
+        case 2: 
+            resetAnimation()
+            $('#animationcode').html('Test')
+            headRotate()
+            break
 
     }
+}
+
+function resetAnimation() {
+    $('#head').removeClass('headRotate');
+}
+
+function headRotate() {
+    $('#head').addClass('headRotate');
 }
