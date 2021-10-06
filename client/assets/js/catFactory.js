@@ -21,18 +21,21 @@ function headColor(color, code) {
     $('#dnabody').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
 
+//Change colour of Paws, Feet and Ears
 function earPawFeetColor(color, code) {
     $('#paw, #left_foot, #right_foot, .ear').css('background', '#' + color)
     $('#earPawFeetcode').html('code: ' + code)
     $('#dnaears').html(code)
 }
 
+//Change colour of Tummy and Mouth Area
 function tummyMouthAreaColor(color, code) {
     $('#mouth_area, #tummy').css('background', '#' + color)
     $('#tummyMouthAreacode').html('code: ' + code)
     $('#dnatummy').html(code)
 }
 
+//Change the Eye colour
 function eyeColor(color, code) {
     $('.eye').css('background', '#' + color)
     $('#eyecode').html('code: ' + code)
@@ -40,7 +43,6 @@ function eyeColor(color, code) {
 }
 
 //Changes the shape of the eyes
-
 function eyeVariation(num) {
 
     $('#dnashape').html(num)
@@ -151,8 +153,7 @@ function squintEyes() {
     $('.eye_right').css({'display':'flex', 'justify-content':'flex-start', 'align-items':'center'})
 }
 
-//Changes the shape of the tummy decoration
-
+//Changes the shape of the Tummy decoration
 function decorationVariation(num) {
 
     $('#dnadecoration').html(num)
@@ -272,14 +273,14 @@ function randomDecoration() {
     $('#bottom_decoration').css({'width':'20px', 'height':'60px'})
 }
 
-//Top and Bottom Decoration Colour changer
+//Change the Top and Bottom Decoration Colour 
 function topBottomDecorationColor(color, code) {
     $('#top_decoration, #bottom_decoration').css('background', '#' + color)
     $('#topBottomDecorationcode').html('code: ' + code)
     $('#dnadecorationTopBottom').html(code)
 }
 
-//Middle Decoration colour changer
+//Change the Middle Decoration colour
 function middleDecorationColor(color, code) {
     $('#middle_decoration').css('background', '#' + color)
     $('#middleDecorationcode').html('code: ' + code)
@@ -298,17 +299,28 @@ function animationVariation(num) {
             break
         case 2: 
             resetAnimation()
-            $('#animationcode').html('Test')
+            $('#animationcode').html('Indian')
             headRotate()
             break
-
+        case 3:
+            resetAnimation()
+            $('#animationcode').html('Bigfoot')
+            bigFoot()
+            break
     }
 }
 
 function resetAnimation() {
     $('#head').removeClass('headRotate');
+    $('#right_foot').removeClass('bigFoot');
+    $('#left_foot').removeClass('bigFoot');
 }
 
 function headRotate() {
     $('#head').addClass('headRotate');
+}
+
+function bigFoot() {
+    $('#right_foot').addClass('bigFoot');
+    $('#left_foot').addClass('bigFoot');
 }
