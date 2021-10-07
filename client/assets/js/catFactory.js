@@ -307,6 +307,31 @@ function animationVariation(num) {
             $('#animationcode').html('Bigfoot')
             bigFoot()
             break
+        case 4:
+            resetAnimation()
+            $('#animationcode').html('LLR')
+            LLR()
+            break
+        case 5:
+            resetAnimation()
+            $('#animationcode').html('Round the World')
+            roundTheWorld()
+            break
+        case 6:
+            resetAnimation()
+            $('#animationcode').html('Dali')
+            dali()
+            break
+        case 7:
+            resetAnimation()
+            $('#animationcode').html('Rudolf')
+            rudolf()
+            break
+        case 8:
+            resetAnimation()
+            $('#animationcode').html('Wave')
+            wave()
+            break
     }
 }
 
@@ -314,6 +339,11 @@ function resetAnimation() {
     $('#head').removeClass('headRotate');
     $('#right_foot').removeClass('bigFoot');
     $('#left_foot').removeClass('bigFoot');
+    $('.eye').removeClass('LLR');
+    $('.roundTheWorld').removeClass('roundTheWorld');
+    $('.whisker').removeClass('dali');
+    $('#nose').removeClass('rudolf');
+    $('#left_arm').removeClass('wave');
 }
 
 function headRotate() {
@@ -323,4 +353,24 @@ function headRotate() {
 function bigFoot() {
     $('#right_foot').addClass('bigFoot');
     $('#left_foot').addClass('bigFoot');
+}
+
+function LLR() {
+    $('.eye').addClass('LLR');
+}
+
+function roundTheWorld() {
+    $('#head').addClass('roundTheWorld');
+}
+
+function dali() {
+    $('.whisker').addClass('dali');
+}
+
+function rudolf() {
+    $('#nose').addClass('rudolf');
+}
+
+function wave() {
+    $('#left_arm').addClass('wave');
 }
