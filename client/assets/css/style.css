@@ -145,12 +145,14 @@
 }
 #left_arm {
     position: absolute;
-    top: 234px;
+    top: 288px;
+    left: -5px;
     background-color: rgb(59, 50, 126);
     height: 80px;
     width: 200px;
     border-radius: 45%;
     transform: rotate(40deg);
+    transform-origin: right center;
 }
 #paw {
     background-color: hotpink;
