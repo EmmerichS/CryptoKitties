@@ -396,3 +396,13 @@ function ears() {
 function cheeky() {
     $('#tongue').addClass('cheeky');
 }
+
+function showColours() {
+    $('#catColors').show();
+    $('#catCattributes').hide();
+}
+
+function showCattributes() {
+    $('#catCattributes').show();
+    $('#catColors').hide();
+}

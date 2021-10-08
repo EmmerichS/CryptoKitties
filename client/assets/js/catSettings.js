@@ -30,6 +30,7 @@ $( document ).ready(function() {
   $('#dnaspecial').html(defaultDNA.lastNum)
 
   renderCat(defaultDNA)
+  $('#catCattributes').hide();
 });
 
 function getDna(){

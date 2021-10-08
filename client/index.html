@@ -108,8 +108,8 @@
             </div>
             <div class="col-lg-6 cattributes m-2 light-b-shadow">
                 <div id="toggleButtons">                
-                    <button type="button" class="btn btn-primary">Colours</button>
-                    <button type="button" class="btn btn-primary">Cattributes</button>
+                    <button type="button" onclick="showColours()" class="btn btn-primary">Colours</button>
+                    <button type="button" onclick="showCattributes()" class="btn btn-primary">Cattributes</button>
                 </div>
                 <br>
                 <!-- Cat colors -->
@@ -130,14 +130,7 @@
                         <label for="formControlRange"><b>Eyes colour</b><span class="badge badge-dark ml-2" id="eyecode"></span></label>
                         <input type="range" min="10" max="98" class="form-control-range" id="eyecolor">
                     </div>
-                    <div class="form-group">
-                        <label for="formControlRange"><b>Eye shape</b><span class="badge badge-dark ml-2" id="eyeBadgeName"></span></label>
-                        <input type="range" min="1" max="10" class="form-control-range" id="eyeshape">
-                    </div>
-                    <div class="form-group">
-                        <label for="formControlRange"><b>Decoration shape</b><span class="badge badge-dark ml-2" id="decorationBadgeName"></span></label>
-                        <input type="range" min="1" max="10" class="form-control-range" id="decorationshape">
-                    </div>
+
                     <div class="form-group">
                         <label for="formControlRange"><b>Top and bottom decoration colour</b><span class="badge badge-dark ml-2" id="topBottomDecorationcode"></span></label>
                         <input type="range" min="10" max="98" class="form-control-range" id="topBottomDecorationcolor">
@@ -145,6 +138,16 @@
                     <div class="form-group">
                         <label for="formControlRange"><b>Middle decoration colour</b><span class="badge badge-dark ml-2" id="middleDecorationcode"></span></label>
                         <input type="range" min="10" max="98" class="form-control-range" id="middleDecorationcolor">
+                    </div>
+                </div>
+                <div id="catCattributes">
+                    <div class="form-group">
+                        <label for="formControlRange"><b>Eye shape</b><span class="badge badge-dark ml-2" id="eyeBadgeName"></span></label>
+                        <input type="range" min="1" max="10" class="form-control-range" id="eyeshape">
+                    </div>
+                    <div class="form-group">
+                        <label for="formControlRange"><b>Decoration shape</b><span class="badge badge-dark ml-2" id="decorationBadgeName"></span></label>
+                        <input type="range" min="1" max="10" class="form-control-range" id="decorationshape">
                     </div>
                     <div class="form-group">
                         <label for="formControlRange"><b>Animation</b><span class="badge badge-dark ml-2" id="animationcode"></span></label>
