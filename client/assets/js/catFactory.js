@@ -332,6 +332,11 @@ function animationVariation(num) {
             $('#animationcode').html('Wave')
             wave()
             break
+        case 9:
+            resetAnimation()
+            $('#animationcode').html('Ears')
+            ears()
+            break
     }
 }
 
@@ -344,6 +349,8 @@ function resetAnimation() {
     $('.whisker').removeClass('dali');
     $('#nose').removeClass('rudolf');
     $('#left_arm').removeClass('wave');
+    $('.left_ear').removeClass('ears');
+    $('.right_ear').removeClass('ears');
 }
 
 function headRotate() {
@@ -373,4 +380,9 @@ function rudolf() {
 
 function wave() {
     $('#left_arm').addClass('wave');
+}
+
+function ears() {
+    $('.left_ear').addClass('ears');
+    $('.right_ear').addClass('ears');
 }

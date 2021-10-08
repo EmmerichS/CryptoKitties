@@ -50,8 +50,11 @@
     0% {
         transform: rotate(0deg);
     }
-    100% {
+    50% {
         transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }
 
@@ -88,7 +91,7 @@
 }
 
 .wave {
-    animation: wave 3s infinite;
+    animation: wave 2.5s infinite;
 }
 @keyframes wave {
 	0% { 
@@ -100,4 +103,31 @@
 	100% { 
         transform: rotate(40deg);
 	}
+}
+
+.ears {
+    animation: ears 6s infinite;
+}
+@keyframes ears {
+    0% {
+        transform: rotate(0deg);
+    }
+    12.5% {
+        transform: rotate(30deg);
+    }
+    37.5% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    62.5% {
+        transform: rotate(-30deg);
+    }
+    87.5% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
