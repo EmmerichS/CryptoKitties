@@ -256,3 +256,7 @@
     width: 60px;
     border-radius: 50%;
 }
+#toggleButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
