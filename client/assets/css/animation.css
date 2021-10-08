@@ -131,3 +131,21 @@
         transform: rotate(0deg);
     }
 }
+
+.cheeky {
+    animation: cheeky 3s infinite;
+}
+@keyframes cheeky {
+    0% {
+        background-color: red;
+        height: 10px;
+    }
+    50% {
+        background-color: red;
+        height: 23px;
+    }
+    100% {
+        background-color: red;
+        height: 10px;
+    }
+}
