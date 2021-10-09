@@ -121,3 +121,42 @@ $('#animation').change(()=>{
 function createDefaultKitty() {
     renderCat(defaultDNA)
 }
+//Create Random Cat
+function createRandomKitty() {
+    //Create a rounded down number from 10 to 98
+    var numHead = Math.floor(Math.random() * 89) + 10;
+    headColor(colors[numHead], numHead)
+    $('#bodycolor').val(numHead)
+
+    var numPaw = Math.floor(Math.random() * 89) + 10;
+    earPawFeetColor(colors[numPaw], numPaw)
+    $('#earPawFeetcolor').val(numPaw)
+
+    var numTummy = Math.floor(Math.random() * 89) + 10;
+    tummyMouthAreaColor(colors[numTummy], numTummy)
+    $('#tummyMouthAreacolor').val(numTummy)
+
+    var numEyes = Math.floor(Math.random() * 89) + 10;
+    eyeColor(colors[numEyes], numEyes)
+    $('#eyecolor').val(numEyes)
+
+    var numEyesShape = Math.floor(Math.random() * 10) + 1;
+    eyeVariation(numEyesShape)
+    $('#eyeshape').val(numEyesShape)
+
+    var numDecorationPattern = Math.floor(Math.random() * 10) + 1;
+    decorationVariation(numDecorationPattern)
+    $('#decorationshape').val(numDecorationPattern)
+
+    var numTopBottomDecoration = Math.floor(Math.random() * 89) + 10;
+    topBottomDecorationColor(colors[numTopBottomDecoration], numTopBottomDecoration)
+    $('#topBottomDecorationcolor').val(numTopBottomDecoration)
+
+    var numMiddleDecoration = Math.floor(Math.random() * 89) + 10;
+    middleDecorationColor(colors[numMiddleDecoration], numMiddleDecoration)
+    $('#middleDecorationcolor').val(numMiddleDecoration)
+
+    var numAnimation = Math.floor(Math.random() * 10) + 1;
+    animationVariation(numAnimation)
+    $('#animation').val(numAnimation)
+}
