@@ -117,3 +117,7 @@ $('#animation').change(()=>{
     var animation = parseInt($('#animation').val())
     animationVariation(animation)
 })
+//Create Default Cat
+function createDefaultKitty() {
+    renderCat(defaultDNA)
+}
