@@ -18,3 +18,8 @@
     bottom: 5px;
 
 }
+
+.catCreations {
+    display: flex;
+    justify-content: space-around;
+}
