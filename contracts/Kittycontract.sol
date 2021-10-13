@@ -10,7 +10,7 @@ abstract contract Kittycontract is IERC721 {
     constructor() IERC721() {}
 
     uint numberOfNFTs;
-    uint[] tokenIDs;
+    //uint[] tokenIDs;
     Token[] allTokens;
 
     struct Token {
@@ -19,7 +19,6 @@ abstract contract Kittycontract is IERC721 {
         uint structId;
         string name;
         string symbol;
-
     }
 
     mapping(address => uint) NFTamount;
@@ -51,5 +50,22 @@ abstract contract Kittycontract is IERC721 {
     }
 
     //What about multiple tokens????
+
+    /* @dev Transfers `tokenId` token from `msg.sender` to `to`.
+     *
+     *
+     * Requirements:
+     *
+     * - `to` cannot be the zero address.
+     * - `to` can not be the contract address.
+     * - `tokenId` token must be owned by `msg.sender`.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transfer(address to, uint256 tokenId) external {
+        require(to != address(0));
+        require(to != address(this));
+        require(allTokens[tokenId].owner == msg.sender);
+    }
 
 }
