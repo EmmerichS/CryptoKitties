@@ -9,14 +9,17 @@ abstract contract Kittycontract is IERC721 {
 
     constructor() IERC721() {}
 
-    uint allNFTs;
+    uint numberOfNFTs;
     uint[] tokenIDs;
+    Token[] allTokens;
 
     struct Token {
         address owner;
-        uint id;
+        uint NFTId;
+        uint structId;
         string name;
         string symbol;
+
     }
 
     mapping(address => uint) NFTamount;
@@ -32,7 +35,7 @@ abstract contract Kittycontract is IERC721 {
     }
 
     function totalSupply() external view returns (uint256 total) {
-        return allNFTs;
+        return numberOfNFTs;
     }
 
     function name() external view returns (string memory tokenName) {
@@ -41,6 +44,10 @@ abstract contract Kittycontract is IERC721 {
 
     function symbol() external view returns (string memory tokenSymbol) {
         return token[msg.sender].symbol;
+    }
+
+    function ownerOf(uint256 tokenId) external view returns (address owner) {
+        return allTokens[tokenId].owner;
     }
 
     //What about multiple tokens????
