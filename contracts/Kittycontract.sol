@@ -18,7 +18,7 @@ abstract contract Kittycontract is IERC721 {
         uint32 mumId;
         uint32 dadId;
         uint16 generation;
-
+        
         address owner;
         uint id;
     }
@@ -59,7 +59,7 @@ abstract contract Kittycontract is IERC721 {
 
         tokenAmount[msg.sender] -= 1;
         tokenAmount[to] += 1;
-        allTokens[tokenId].owner = to;
+        ownership[tokenId] = to;
 
         emit Transfer(msg.sender, to, tokenId);
     }
