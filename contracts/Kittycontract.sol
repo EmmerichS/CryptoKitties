@@ -3,19 +3,24 @@ pragma solidity ^0.8.9;
 
 import "./IERC721.sol";
 
-//Contractsare considered abstract if at least ONE of their functions is not implemented
+//Contracts are considered abstract if at least ONE of their functions is not implemented
 
 abstract contract Kittycontract is IERC721 {
 
     constructor() IERC721() {}
 
-    uint numberOfTokens;
+    string public constant Name = "HelloKitties";
+    string public constant Symbol ="HKTS";
 
     struct Token {
+        uint256 genes;
+        uint64 birthTime;
+        uint32 mumId;
+        uint32 dadId;
+        uint16 generation;
+
         address owner;
-        uint NFTId;
-        string name;
-        string symbol;
+        uint id;
     }
     Token[] allTokens;
 
@@ -31,15 +36,15 @@ abstract contract Kittycontract is IERC721 {
     }
 
     function totalSupply() external view returns (uint256 total) {
-        return numberOfTokens;
+        return allTokens.length;
     }
 
-    function name(uint tokenId) external view returns (string memory tokenName) {
-        return allTokens[tokenId].name;
+    function name() external pure returns (string memory tokenName) {
+        return Name;
     }
 
-    function symbol(uint tokenId) external view returns (string memory tokenSymbol) {
-        return allTokens[tokenId].symbol;
+    function symbol() external pure returns (string memory tokenSymbol) {
+        return Symbol;
     }
 
     function ownerOf(uint256 tokenId) external view returns (address owner) {
