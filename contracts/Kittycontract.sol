@@ -24,6 +24,7 @@ abstract contract Kittycontract is IERC721 {
     }
     Token[] allTokens;
 
+    mapping(uint256 => address) ownership;
     mapping(address => uint) tokenAmount;
     mapping(address => Token[]) allTokensPerOwner;
 
@@ -48,7 +49,7 @@ abstract contract Kittycontract is IERC721 {
     }
 
     function ownerOf(uint256 tokenId) external view returns (address owner) {
-        return allTokens[tokenId].owner;
+        return ownership[tokenId];
     }
 
     function transfer(address to, uint256 tokenId) external {
@@ -62,5 +63,4 @@ abstract contract Kittycontract is IERC721 {
 
         emit Transfer(msg.sender, to, tokenId);
     }
-
 }
