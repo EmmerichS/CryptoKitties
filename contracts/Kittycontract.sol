@@ -26,12 +26,13 @@ abstract contract Kittycontract is IERC721 {
 
     mapping(uint256 => address) ownership;
     mapping(address => uint) tokenAmount;
-    mapping(address => Token[]) allTokensPerOwner;
+    mapping(address => Token[]) allTokensPerOwner;  //My own addition
 
     function balanceOf(address owner) external view returns (uint256 balance) {
         return tokenAmount[owner];
     }
 
+    //My own addition
     function allNFTsPerOwner() public view returns (Token[] memory) {
         return allTokensPerOwner[msg.sender];
     }
@@ -56,11 +57,25 @@ abstract contract Kittycontract is IERC721 {
         require(to != address(0));
         require(to != address(this));
         require(allTokens[tokenId].owner == msg.sender);
+        //require(_owns(msg.sender, tokenId));
 
-        tokenAmount[msg.sender] -= 1;
-        tokenAmount[to] += 1;
-        ownership[tokenId] = to;
-
-        emit Transfer(msg.sender, to, tokenId);
+        _transfer(msg.sender, to, tokenId);
     }
+
+    function _transfer(address _from, address _to, uint tokenId) internal {
+        tokenAmount[_to] ++;
+        ownership[tokenId] = _to;
+
+        if(_from != address(0)) {
+            tokenAmount[_from] --;
+        }
+
+        emit Transfer(_from, _to, tokenId);
+    }
+
+    /*
+    function _owns(address claimant, uint tokenId) internal view returns(bool) {
+        return ownership[tokenId] == claimant;
+    }
+    */
 }
