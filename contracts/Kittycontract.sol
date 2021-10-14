@@ -5,7 +5,7 @@ import "./IERC721.sol";
 
 //Contracts are considered abstract if at least ONE of their functions is not implemented
 
-abstract contract Kittycontract is IERC721 {
+contract Kittycontract is IERC721 {
 
     constructor() IERC721() {}
 
