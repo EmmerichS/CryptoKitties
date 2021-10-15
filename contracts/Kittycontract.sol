@@ -12,21 +12,46 @@ contract Kittycontract is IERC721 {
     string public constant Name = "HelloKitties";
     string public constant Symbol ="HKTS";
 
+    event Birth(address owner, uint256 kittenId, uint256 mumId, uint256 dadId, uint256 genes);
+
     struct Token {
         uint256 genes;
         uint64 birthTime;
         uint32 mumId;
         uint32 dadId;
         uint16 generation;
-        
-        address owner;
-        uint id;
     }
     Token[] allTokens;
 
     mapping(uint256 => address) ownership;
     mapping(address => uint) tokenAmount;
     mapping(address => Token[]) allTokensPerOwner;  //My own addition
+
+    function _createKitty(
+        uint256 _mumId,
+        uint256 _dadId,
+        uint256 _generation,
+        uint256 _genes,
+        address _owner
+    ) private returns(uint256 tokenId) {
+
+        Token memory _newKitty = Token({
+            mumId: uint32(_mumId),
+            dadId: uint32(_dadId),
+            generation: uint16(_generation),
+            genes: _genes,
+            birthTime: uint64(block.timestamp)
+        });
+
+        allTokens.push(_newKitty);
+        uint256 newKittyId = allTokens.length - 1;
+
+        emit Birth(_owner, newKittyId, _mumId, _dadId, _genes);
+
+        _transfer(address(0), _owner, newKittyId);
+
+        return newKittyId;
+    }
 
     function balanceOf(address owner) external view returns (uint256 balance) {
         return tokenAmount[owner];
@@ -56,7 +81,7 @@ contract Kittycontract is IERC721 {
     function transfer(address to, uint256 tokenId) external {
         require(to != address(0));
         require(to != address(this));
-        require(allTokens[tokenId].owner == msg.sender);
+        require(ownership[tokenId] == msg.sender);
         //require(_owns(msg.sender, tokenId));
 
         _transfer(msg.sender, to, tokenId);
