@@ -6,7 +6,7 @@ import "./Ownable.sol";
 
 //Contracts are considered abstract if at least ONE of their functions is not implemented
 
-contract Kittycontract is IERC721 {
+contract Kittycontract is IERC721, Ownable {
 
     constructor() IERC721() {}
 
@@ -27,12 +27,10 @@ contract Kittycontract is IERC721 {
     mapping(uint256 => address) ownership;
     mapping(address => uint) tokenAmount;
     mapping(address => Token[]) allTokensPerOwner;  //My own addition
-
-    /*
+    
     function createKittyGen0(uint256 _genes) public onlyOwner {
-            Also create Ownable contract!!!!
+        _createKitty(0, 0, 0, _genes, msg.sender);
     }
-    */
 
     function _createKitty(
         uint256 _mumId,
