@@ -2,6 +2,7 @@
 pragma solidity ^0.8.9;
 
 import "./IERC721.sol";
+import "./Ownable.sol";
 
 //Contracts are considered abstract if at least ONE of their functions is not implemented
 
@@ -26,6 +27,12 @@ contract Kittycontract is IERC721 {
     mapping(uint256 => address) ownership;
     mapping(address => uint) tokenAmount;
     mapping(address => Token[]) allTokensPerOwner;  //My own addition
+
+    /*
+    function createKittyGen0(uint256 _genes) public onlyOwner {
+            Also create Ownable contract!!!!
+    }
+    */
 
     function _createKitty(
         uint256 _mumId,
