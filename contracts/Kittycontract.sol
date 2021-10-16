@@ -64,6 +64,10 @@ contract Kittycontract is IERC721, Ownable {
         return newKittyId;
     }
 
+    function getKitty(uint tokenId) public view returns(Token memory) {
+        return allTokens[tokenId];
+    }
+
     function balanceOf(address owner) external view returns (uint256 balance) {
         return tokenAmount[owner];
     }
