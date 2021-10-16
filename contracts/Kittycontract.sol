@@ -12,6 +12,8 @@ contract Kittycontract is IERC721, Ownable {
 
     string public constant Name = "HelloKitties";
     string public constant Symbol ="HKTS";
+    uint public constant MAX_AMOUNT_GEN0 = 10;
+    uint gen0Counter;
 
     event Birth(address owner, uint256 kittenId, uint256 mumId, uint256 dadId, uint256 genes);
 
@@ -28,8 +30,12 @@ contract Kittycontract is IERC721, Ownable {
     mapping(address => uint) tokenAmount;
     mapping(address => Token[]) allTokensPerOwner;  //My own addition
     
-    function createKittyGen0(uint256 _genes) public onlyOwner {
-        _createKitty(0, 0, 0, _genes, msg.sender);
+    function createKittyGen0(uint256 _genes) public onlyOwner returns(uint) {
+
+        require(gen0Counter < MAX_AMOUNT_GEN0, "Maximum amount of Generation 0 cats reached");
+        gen0Counter ++;
+
+        return _createKitty(0, 0, 0, _genes, msg.sender);
     }
 
     function _createKitty(
