@@ -160,3 +160,16 @@ function createRandomKitty() {
     animationVariation(numAnimation)
     $('#animation').val(numAnimation)
 }
+function createKitty() {
+  
+    var genes = getDna();
+
+    instance.methods.createKittyGen0(genes).send({}, function(error, txHash) {
+        if(error) {
+            console.log(error);
+        }
+        else {
+            console.log(txHash);
+        }
+    })
+}

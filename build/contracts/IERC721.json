@@ -156,7 +156,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.9;\r\n/**\r\n * @dev Required interface of an ERC721 compliant contract.\r\n */\r\ninterface IERC721 {\r\n    /**\r\n     * @dev Emitted when `tokenId` token is transfered from `from` to `to`.\r\n     */\r\n    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);\r\n\r\n    /**\r\n     * @dev Emitted when `owner` enables `approved` to manage the `tokenId` token.\r\n     */\r\n    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);\r\n\r\n    /**\r\n     * @dev Returns the number of tokens in ``owner``'s account.\r\n     */\r\n    function balanceOf(address owner) external view returns (uint256 balance);\r\n\r\n    /*\r\n     * @dev Returns the total number of tokens in circulation.\r\n     */\r\n    function totalSupply() external view returns (uint256 total);\r\n\r\n    /*\r\n     * @dev Returns the name of the token.\r\n     */\r\n    function name() external view returns (string memory tokenName);\r\n\r\n    /*\r\n     * @dev Returns the symbol of the token.\r\n     */\r\n    function symbol() external view returns (string memory tokenSymbol);\r\n\r\n    /**\r\n     * @dev Returns the owner of the `tokenId` token.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - `tokenId` must exist.\r\n     */\r\n    function ownerOf(uint256 tokenId) external view returns (address owner);\r\n\r\n\r\n     /* @dev Transfers `tokenId` token from `msg.sender` to `to`.\r\n     *\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - `to` cannot be the zero address.\r\n     * - `to` can not be the contract address.\r\n     * - `tokenId` token must be owned by `msg.sender`.\r\n     *\r\n     * Emits a {Transfer} event.\r\n     */\r\n    function transfer(address to, uint256 tokenId) external;\r\n}\r\n",
-  "sourcePath": "C:\\Users\\Emmerich\\Documents\\Academy\\HelloKittites\\MyHelloKitties\\contracts\\IERC721.sol",
+  "sourcePath": "C:\\Users\\Emmerich\\Documents\\Academy\\HelloKitties\\MyHelloKitties\\contracts\\IERC721.sol",
   "ast": {
     "absolutePath": "project:/contracts/IERC721.sol",
     "exportedSymbols": {
@@ -1549,7 +1549,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-20T15:33:52.144Z",
+  "updatedAt": "2021-10-22T05:58:48.414Z",
   "devdoc": {
     "details": "Required interface of an ERC721 compliant contract.",
     "events": {

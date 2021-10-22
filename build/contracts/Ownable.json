@@ -16,7 +16,7 @@
   "sourceMap": "67:211:3:-:0;;;115:51;;;;;;;;;;148:10;140:5;;:18;;;;;;;;;;;;;;;;;;67:211;;;;;;",
   "deployedSourceMap": "67:211:3:-:0;;;;;",
   "source": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.9;\r\n\r\ncontract Ownable {\r\n\r\n    address owner;\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    modifier onlyOwner {\r\n        require(msg.sender == owner, \"Caller is not owner\");\r\n        _;\r\n    }\r\n}",
-  "sourcePath": "C:\\Users\\Emmerich\\Documents\\Academy\\HelloKittites\\MyHelloKitties\\contracts\\Ownable.sol",
+  "sourcePath": "C:\\Users\\Emmerich\\Documents\\Academy\\HelloKitties\\MyHelloKitties\\contracts\\Ownable.sol",
   "ast": {
     "absolutePath": "project:/contracts/Ownable.sol",
     "exportedSymbols": {
@@ -643,7 +643,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-20T15:33:52.163Z",
+  "updatedAt": "2021-10-22T05:58:48.435Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

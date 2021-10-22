@@ -2,7 +2,7 @@ var web3js = new Web3(Web3.givenProvider);
 
 var instance;
 var user;
-var contractAddress = "0x6af4aDbB49930796858D007D36A164C11F55D0a8";
+var contractAddress = "0xe5b3efc88d0c4955fE52BA14ac9ADc0916Aa6de8";
 
 $(document).ready(function() {
     window.ethereum.enable().then(function(accounts) {
@@ -10,5 +10,6 @@ $(document).ready(function() {
         user = accounts[0];
 
         console.log(instance);
+        
     })
 })
