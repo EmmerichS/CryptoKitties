@@ -29,6 +29,8 @@ contract Kittycontract is IERC721, Ownable {
     mapping(uint256 => address) ownership;
     mapping(address => uint) tokenAmount;
     mapping(address => Token[]) allTokensPerOwner;  //My own addition
+    mapping(uint => address) public approveToken;
+    mapping(address => mapping(address => bool)) private operatorApproval;
     
     function createKittyGen0(uint256 _genes) public onlyOwner returns(uint) {
 
@@ -113,9 +115,32 @@ contract Kittycontract is IERC721, Ownable {
         emit Transfer(_from, _to, tokenId);
     }
 
-    /*
-    function _owns(address claimant, uint tokenId) internal view returns(bool) {
-        return ownership[tokenId] == claimant;
+    function approve(address _approved, uint256 _tokenId) external {
+        require(ownership[_tokenId] == msg.sender, "Not owner of token");
+        require(approveToken[_tokenId] == msg.sender, "Not approved by owner");
+        _approve(_approved, _tokenId);
     }
-    */
-}
+
+    function _approve(address _approved, uint256 _tokenId) internal {
+        approveToken[_tokenId] = _approved;
+    }
+
+    function getApproved(uint256 _tokenId) external view returns (address) {
+        return approveToken[_tokenId];
+    }
+
+    function setApprovalForAll(address _operator, bool _approved) external {
+
+        _setApprovalForAll(_operator, _approved);
+        emit ApprovalForAll(msg.sender, _operator, _approved);
+    }
+
+    function _setApprovalForAll(address _operator, bool _approved) internal {
+        operatorApproval[msg.sender][_operator] = _approved;
+    }
+
+    function isApprovedForAll(address _owner, address _operator) external view returns (bool) {
+        return operatorApproval[_owner][_operator];
+    }
+}    
+
