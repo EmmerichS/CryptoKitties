@@ -110,15 +110,17 @@ contract Kittycontract is IERC721, Ownable {
 
         if(_from != address(0)) {
             tokenAmount[_from] --;
+            delete approveToken[tokenId];
         }
 
         emit Transfer(_from, _to, tokenId);
     }
 
     function approve(address _approved, uint256 _tokenId) external {
-        require(ownership[_tokenId] == msg.sender, "Not owner of token");
-        require(approveToken[_tokenId] == msg.sender, "Not approved by owner");
+        //require(owns(msg.sender, _tokenId), "Not owner");
+        require(ownership[_tokenId] == msg.sender || approveToken[_tokenId] == msg.sender, "Neither owner of token nor approved");
         _approve(_approved, _tokenId);
+        emit Approval(msg.sender, _approved, _tokenId);
     }
 
     function _approve(address _approved, uint256 _tokenId) internal {
@@ -126,11 +128,12 @@ contract Kittycontract is IERC721, Ownable {
     }
 
     function getApproved(uint256 _tokenId) external view returns (address) {
+        require(_tokenId < allTokens.length, "Token does not exist");
         return approveToken[_tokenId];
     }
 
     function setApprovalForAll(address _operator, bool _approved) external {
-
+        require(msg.sender != _operator, "Owner and operator are the same");
         _setApprovalForAll(_operator, _approved);
         emit ApprovalForAll(msg.sender, _operator, _approved);
     }
@@ -142,5 +145,9 @@ contract Kittycontract is IERC721, Ownable {
     function isApprovedForAll(address _owner, address _operator) external view returns (bool) {
         return operatorApproval[_owner][_operator];
     }
+
+    /*function owns(address claimant, uint tokenId) internal view returns(bool) {
+        return ownership[tokenId] == claimant;
+    }*/
 }    
 
