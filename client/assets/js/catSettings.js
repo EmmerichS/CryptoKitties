@@ -161,7 +161,7 @@ function createRandomKitty() {
     $('#animation').val(numAnimation)
 }
 function createKitty() {
-  
+
     var genes = getDna();
 
     instance.methods.createKittyGen0(genes).send({}, function(error, txHash) {
@@ -170,6 +170,8 @@ function createKitty() {
         }
         else {
             console.log(txHash);
-        }
+        } 
     })
+
 }
+

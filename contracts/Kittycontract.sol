@@ -12,7 +12,7 @@ contract Kittycontract is IERC721, Ownable {
 
     string public constant Name = "HelloKitties";
     string public constant Symbol ="HKTS";
-    uint public constant MAX_AMOUNT_GEN0 = 10;
+    uint public constant MAX_AMOUNT_GEN0 = 1000;
     uint gen0Counter;
 
     event Birth(address owner, uint256 kittenId, uint256 mumId, uint256 dadId, uint256 genes);
