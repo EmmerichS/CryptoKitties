@@ -2,6 +2,7 @@
 pragma solidity ^0.8.9;
 
 import "./IERC721.sol";
+import "./IERC721Receiver.sol";
 import "./Ownable.sol";
 
 //Contracts are considered abstract if at least ONE of their functions is not implemented
@@ -14,6 +15,7 @@ contract Kittycontract is IERC721, Ownable {
     string public constant Symbol ="HKTS";
     uint public constant MAX_AMOUNT_GEN0 = 1000;
     uint gen0Counter;
+    bytes4 internal constant MAGIC_NUMBER = bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"));
 
     event Birth(address owner, uint256 kittenId, uint256 mumId, uint256 dadId, uint256 genes);
 
@@ -150,23 +152,65 @@ contract Kittycontract is IERC721, Ownable {
         return ownership[tokenId] == claimant;
     }*/
 
-    /// @notice Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE
-    ///  TO CONFIRM THAT `_to` IS CAPABLE OF RECEIVING NFTS OR ELSE
-    ///  THEY MAY BE PERMANENTLY LOST
-    /// @dev Throws unless `msg.sender` is the current owner, an authorized
-    ///  operator, or the approved address for this NFT. Throws if `_from` is
-    ///  not the current owner. Throws if `_to` is the zero address. Throws if
-    ///  `_tokenId` is not a valid NFT.
-    /// @param _from The current owner of the NFT
-    /// @param _to The new owner
-    /// @param _tokenId The NFT to transfer
+   
     function transferFrom(address _from, address _to, uint256 _tokenId) external {
 
         require(ownership[_tokenId] == msg.sender || approveToken[_tokenId] == msg.sender 
-            || operatorApproval[_from][msg.sender] == true, "Not owner, nor approved, nor operator");
+            || operatorApproval[_from][msg.sender] == true, "msg.sender is not owner, nor approved, nor operator");
+        require(ownership[_tokenId] == _from, "_from address is not the owner");
         require(_tokenId < allTokens.length, "Token does not exist");
+        require(_to != address(0));
 
         _transfer(_from, _to, _tokenId);
     }
+
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes calldata _data) external {
+
+        require(ownership[_tokenId] == msg.sender || approveToken[_tokenId] == msg.sender 
+            || operatorApproval[_from][msg.sender] == true, "msg.sender is not owner, nor approved, nor operator");
+        require(ownership[_tokenId] == _from, "_from address is not the owner");
+        require(_tokenId < allTokens.length, "Token does not exist");
+        require(_to != address(0));
+
+        _safeTransfer(_from, _to, _tokenId, _data);
+    }
+
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external {
+
+        require(ownership[_tokenId] == msg.sender || approveToken[_tokenId] == msg.sender 
+            || operatorApproval[_from][msg.sender] == true, "msg.sender is not owner, nor approved, nor operator");
+        require(ownership[_tokenId] == _from, "_from address is not the owner");
+        require(_tokenId < allTokens.length, "Token does not exist");
+        require(_to != address(0));
+
+        _safeTransfer(_from, _to, _tokenId, "");
+    }
+
+    function _safeTransfer(address _from, address _to, uint _tokenId, bytes memory _data) internal {
+        _transfer(_from, _to, _tokenId);
+        
+        require( _checkERC721Support(_from, _to, _tokenId, _data) );
+    }
+
+    function _checkERC721Support(address _from, address _to, uint _tokenId, bytes memory _data) internal returns (bool) {
+        //Check if _to is not a contract. If it isn't, then we're dealing with a wallet.
+        //The return value will be true and the transfer will go through.
+        if( !_isContract(_to) ) {
+            return true;
+        }
+
+        //Here we call the the onERC721Received() function in the contract/interface at address _to 
+        bytes4 returnData = IERC721Receiver(_to).onERC721Received(msg.sender, _from, _tokenId, _data);
+        //And then we check the return value
+        return returnData == MAGIC_NUMBER;
+    }
+
+    function _isContract(address _to) view internal returns(bool) {
+        uint32 size;
+        assembly {
+            size := extcodesize(_to)    //external code size: checks the code size. 
+        }                               //If code size = 0 -> wallet; if code size > 0 -> contract
+        return size > 0;                //If the size is > 0, then the return value will be true, which means we're dealing with a 
+    }                                   //contract and the the if statement in _checkERC721Support will not be true
 }    
 
