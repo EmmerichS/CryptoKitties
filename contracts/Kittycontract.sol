@@ -164,8 +164,18 @@ contract Kittycontract is IERC721, Ownable {
         _transfer(_from, _to, _tokenId);
     }
 
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes calldata _data) external {
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) public {
+        require(ownership[_tokenId] == msg.sender || approveToken[_tokenId] == msg.sender 
+            || operatorApproval[_from][msg.sender] == true, "msg.sender is not owner, nor approved, nor operator");
+        require(ownership[_tokenId] == _from, "_from address is not the owner");
+        require(_tokenId < allTokens.length, "Token does not exist");
+        require(_to != address(0));
 
+        _safeTransfer(_from, _to, _tokenId, "");   
+    }
+
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes calldata _data) public {
+        //Can also put all these checks into a function that returns true (bool)
         require(ownership[_tokenId] == msg.sender || approveToken[_tokenId] == msg.sender 
             || operatorApproval[_from][msg.sender] == true, "msg.sender is not owner, nor approved, nor operator");
         require(ownership[_tokenId] == _from, "_from address is not the owner");
@@ -175,18 +185,7 @@ contract Kittycontract is IERC721, Ownable {
         _safeTransfer(_from, _to, _tokenId, _data);
     }
 
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external {
-
-        require(ownership[_tokenId] == msg.sender || approveToken[_tokenId] == msg.sender 
-            || operatorApproval[_from][msg.sender] == true, "msg.sender is not owner, nor approved, nor operator");
-        require(ownership[_tokenId] == _from, "_from address is not the owner");
-        require(_tokenId < allTokens.length, "Token does not exist");
-        require(_to != address(0));
-
-        _safeTransfer(_from, _to, _tokenId, "");
-    }
-
-    function _safeTransfer(address _from, address _to, uint _tokenId, bytes memory _data) internal {
+    function _safeTransfer(address _from, address _to, uint _tokenId, bytes memory _data) public {
         _transfer(_from, _to, _tokenId);
         
         require( _checkERC721Support(_from, _to, _tokenId, _data) );
