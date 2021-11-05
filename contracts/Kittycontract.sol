@@ -16,6 +16,8 @@ contract Kittycontract is IERC721, Ownable {
     uint public constant MAX_AMOUNT_GEN0 = 1000;
     uint gen0Counter;
     bytes4 internal constant MAGIC_NUMBER = bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"));
+    bytes4 private constant INTERFACE_ID_721 = 0x80ac58cd;
+    bytes4 private constant INTERFACE_ID_165 = 0x01ffc9a7;
 
     event Birth(address owner, uint256 kittenId, uint256 mumId, uint256 dadId, uint256 genes);
 
@@ -211,5 +213,9 @@ contract Kittycontract is IERC721, Ownable {
         }                               //If code size = 0 -> wallet; if code size > 0 -> contract
         return size > 0;                //If the size is > 0, then the return value will be true, which means we're dealing with a 
     }                                   //contract and the the if statement in _checkERC721Support will not be true
+ 
+    function supportsInterface(bytes4 _interfaceId) external pure returns(bool) {
+        return ( _interfaceId == INTERFACE_ID_721 || _interfaceId == INTERFACE_ID_165);
+    }
 }    
 
