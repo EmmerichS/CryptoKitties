@@ -217,5 +217,25 @@ contract Kittycontract is IERC721, Ownable {
     function supportsInterface(bytes4 _interfaceId) external pure returns(bool) {
         return ( _interfaceId == INTERFACE_ID_721 || _interfaceId == INTERFACE_ID_165);
     }
+
+    function breed(uint _mumId, uint _dadId) public returns(uint) {
+        //Check ownership of mum and dad
+        //You got the DNA
+        //Figure out the generation of new cat
+        //Create a new cat with the new properties, transfer it to the msg.sender
+
+        uint newDNA = _mixDNA(_mumDNA, _dadDNA);
+    }
+
+    function _mixDNA(uint _mumDNA, uint _dadDNA) public pure returns(uint) {
+
+        //10 + 20 = 1020    this is what we want to achieve when we "add" the first and second half
+        //10 * 100 = 1000
+        //1000 + 20 = 1020
+
+        uint firstHalf = _dadDNA / 100000000;
+        uint secondHalf = _mumDNA % 100000000;
+        uint newDNA = firstHalf * 100000000 + secondHalf;
+        return newDNA;
 }    
 
