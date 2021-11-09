@@ -224,6 +224,9 @@ contract Kittycontract is IERC721, Ownable {
         //Figure out the generation of new cat
         //Create a new cat with the new properties, transfer it to the msg.sender
 
+        uint _mumDNA = allTokens[_mumId].genes;
+        uint _dadDNA = allTokens[_dadId].genes;
+
         uint newDNA = _mixDNA(_mumDNA, _dadDNA);
     }
 
