@@ -218,7 +218,7 @@ contract Kittycontract is IERC721, Ownable {
         return ( _interfaceId == INTERFACE_ID_721 || _interfaceId == INTERFACE_ID_165);
     }
 
-    function breed(uint _mumId, uint _dadId) public returns(uint) {
+    function breed(uint _mumId, uint _dadId) public {
         //Check ownership of mum and dad
         require(ownership[_mumId] == msg.sender, "Mum cat does not belong to msg.sender");
         require(ownership[_dadId] == msg.sender, "Dad cat does not belong to msg.sender");
@@ -229,6 +229,7 @@ contract Kittycontract is IERC721, Ownable {
         uint newDNA = _mixDNA(_mumDNA, _dadDNA);
 
         //Figure out the generation of new cat
+        //I took the average of the parents and added one
         uint newKittyGen = ((allTokens[_mumId].generation + allTokens[_dadId].generation) / 2) + 1;
 
         //Create a new cat with the new properties, transfer it to the msg.sender
@@ -246,5 +247,6 @@ contract Kittycontract is IERC721, Ownable {
         uint secondHalf = _mumDNA % 100000000;
         uint newDNA = firstHalf * 100000000 + secondHalf;
         return newDNA;
-}    
+    }  
+}  
 
