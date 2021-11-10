@@ -220,14 +220,20 @@ contract Kittycontract is IERC721, Ownable {
 
     function breed(uint _mumId, uint _dadId) public returns(uint) {
         //Check ownership of mum and dad
-        //You got the DNA
-        //Figure out the generation of new cat
-        //Create a new cat with the new properties, transfer it to the msg.sender
+        require(ownership[_mumId] == msg.sender, "Mum cat does not belong to msg.sender");
+        require(ownership[_dadId] == msg.sender, "Dad cat does not belong to msg.sender");
 
+        //You got the DNA
         uint _mumDNA = allTokens[_mumId].genes;
         uint _dadDNA = allTokens[_dadId].genes;
-
         uint newDNA = _mixDNA(_mumDNA, _dadDNA);
+
+        //Figure out the generation of new cat
+        uint newKittyGen = ((allTokens[_mumId].generation + allTokens[_dadId].generation) / 2) + 1;
+
+        //Create a new cat with the new properties, transfer it to the msg.sender
+        _createKitty(_mumId, _dadId, newKittyGen, newDNA, msg.sender);
+     
     }
 
     function _mixDNA(uint _mumDNA, uint _dadDNA) public pure returns(uint) {
