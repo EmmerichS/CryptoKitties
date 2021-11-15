@@ -260,3 +260,8 @@
     display: flex;
     justify-content: space-evenly;
 }
+#buttons {
+    background-color: blue;
+    display: flex;
+    flex-direction: row-reverse;
+}
