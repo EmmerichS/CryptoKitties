@@ -20,8 +20,7 @@ $( document ).ready(function() {
   $('#dnabody').html(defaultDNA.bodyColor);  
   $('#dnaears').html(defaultDNA.earsColor);
   $('#dnamouth').html(defaultDNA.mouthColor);
-  $('#dnaeyes').html(defaultDNA.eyesColor);
-    
+  $('#dnaeyes').html(defaultDNA.eyesColor);    
   $('#dnashape').html(defaultDNA.eyesShape)
   $('#dnadecoration').html(defaultDNA.decorationPattern)
   $('#dnadecorationTopBottom').html(defaultDNA.decorationTopBottomColor)
@@ -36,9 +35,9 @@ $( document ).ready(function() {
 function getDna(){
     var dna = ''
     dna += $('#dnabody').html()
+    dna += $('#dnaears').html()
     dna += $('#dnamouth').html()
     dna += $('#dnaeyes').html()
-    dna += $('#dnaears').html()
     dna += $('#dnashape').html()
     dna += $('#dnadecoration').html()
     dna += $('#dnadecorationTopBottom').html()
@@ -160,9 +159,12 @@ function createRandomKitty() {
     animationVariation(numAnimation)
     $('#animation').val(numAnimation)
 }
+
 function createKitty() {
 
     var genes = getDna();
+
+    console.log(genes);
 
     instance.methods.createKittyGen0(genes).send({}, function(error, txHash) {
         if(error) {

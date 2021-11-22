@@ -129,7 +129,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -142,7 +143,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -155,7 +157,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -174,7 +177,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -239,7 +243,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -258,7 +263,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -298,7 +304,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -311,7 +318,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -324,7 +332,8 @@
         }
       ],
       "stateMutability": "pure",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -337,7 +346,8 @@
         }
       ],
       "stateMutability": "pure",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -356,7 +366,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -411,7 +422,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -453,7 +465,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -574,7 +587,8 @@
         }
       ],
       "stateMutability": "pure",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -616,7 +630,8 @@
         }
       ],
       "stateMutability": "pure",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"kittenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"mumId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"dadId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"}],\"name\":\"Birth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"MAX_AMOUNT_GEN0\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"Name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"Symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_mumDNA\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_dadDNA\",\"type\":\"uint256\"}],\"name\":\"_mixDNA\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"_safeTransfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"allNFTsPerOwner\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"birthTime\",\"type\":\"uint64\"},{\"internalType\":\"uint32\",\"name\":\"mumId\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"dadId\",\"type\":\"uint32\"},{\"internalType\":\"uint16\",\"name\":\"generation\",\"type\":\"uint16\"}],\"internalType\":\"struct Kittycontract.Token[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_approved\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"approveToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_mumId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_dadId\",\"type\":\"uint256\"}],\"name\":\"breed\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_genes\",\"type\":\"uint256\"}],\"name\":\"createKittyGen0\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getKitty\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"birthTime\",\"type\":\"uint64\"},{\"internalType\":\"uint32\",\"name\":\"mumId\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"dadId\",\"type\":\"uint32\"},{\"internalType\":\"uint16\",\"name\":\"generation\",\"type\":\"uint16\"}],\"internalType\":\"struct Kittycontract.Token\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenName\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"_interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenSymbol\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"total\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"The zero address indicates there is no approved address.  Throws unless `msg.sender` is the current NFT owner, or an authorized  operator of the current owner.\",\"params\":{\"_approved\":\"The new approved NFT controller\",\"_tokenId\":\"The NFT to approve\"}},\"balanceOf(address)\":{\"details\":\"Returns the number of tokens in ``owner``'s account.\"},\"getApproved(uint256)\":{\"details\":\"Throws if `_tokenId` is not a valid NFT.\",\"params\":{\"_tokenId\":\"The NFT to find the approved address for\"},\"returns\":{\"_0\":\"The approved address for this NFT, or the zero address if there is none\"}},\"isApprovedForAll(address,address)\":{\"params\":{\"_operator\":\"The address that acts on behalf of the owner\",\"_owner\":\"The address that owns the NFTs\"},\"returns\":{\"_0\":\"True if `_operator` is an approved operator for `_owner`, false otherwise\"}},\"ownerOf(uint256)\":{\"details\":\"Returns the owner of the `tokenId` token. Requirements: - `tokenId` must exist.\"},\"setApprovalForAll(address,bool)\":{\"details\":\"Emits the ApprovalForAll event. The contract MUST allow  multiple operators per owner.\",\"params\":{\"_approved\":\"True if the operator is approved, false to revoke approval\",\"_operator\":\"Address to add to the set of authorized operators\"}},\"transferFrom(address,address,uint256)\":{\"details\":\"Throws unless `msg.sender` is the current owner, an authorized  operator, or the approved address for this NFT. Throws if `_from` is  not the current owner. Throws if `_to` is the zero address. Throws if  `_tokenId` is not a valid NFT.\",\"params\":{\"_from\":\"The current owner of the NFT\",\"_to\":\"The new owner\",\"_tokenId\":\"The NFT to transfer\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"approve(address,uint256)\":{\"notice\":\"Change or reaffirm the approved address for an NFT\"},\"getApproved(uint256)\":{\"notice\":\"Get the approved address for a single NFT\"},\"isApprovedForAll(address,address)\":{\"notice\":\"Query if an address is an authorized operator for another address\"},\"setApprovalForAll(address,bool)\":{\"notice\":\"Enable or disable approval for a third party (\\\"operator\\\") to manage  all of `msg.sender`'s assets\"},\"transferFrom(address,address,uint256)\":{\"notice\":\"Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE  TO CONFIRM THAT `_to` IS CAPABLE OF RECEIVING NFTS OR ELSE  THEY MAY BE PERMANENTLY LOST\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Kittycontract.sol\":\"Kittycontract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IERC721.sol\":{\"keccak256\":\"0xa1d014ebd413ede3aa3f656913516076f1f6c6fdba2dc8c67c9bb49afa3d50c6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://b685c29d34d82255524cd1724c9bac7369681785df3b6a3cbe96e09d29e96868\",\"dweb:/ipfs/QmTFkPtmn9m2kaDbkhaSQXmnGVJ1JRoa11Gh1fMZPXZf7z\"]},\"project:/contracts/IERC721Receiver.sol\":{\"keccak256\":\"0xa881300b5a74eb1a5ecf6dd14b5961c6b3076ee30819c646e9915124c4a10c1e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://7a16b0009942b814164489df04615135e3e2014f2fde54843a032ae188419f06\",\"dweb:/ipfs/Qmdj8PkhBVRcbiJaPqpfZ36xUunUcJaNeoTWYd8qkegg53\"]},\"project:/contracts/Kittycontract.sol\":{\"keccak256\":\"0x1c12ec8891f688d01bc43846c79663691300deaf91abe2e8cb96d74f1c62459d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f998bb191f295413c3fddb279278eff4a98b3cd71028aff5e5e412c8348b5e1a\",\"dweb:/ipfs/QmNfjLd7fh6FF7ZSWMuJcR5WMH1w7ss2qsauSB1bD2TJUh\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0xbfbc3e4ee2b1d8c385e1a43c7572b842f4dd3f5bbbfe95807afd3ae900dfa6e3\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9a49b5ed1648c605acb0a51559ef957aee0c104762ef0bd271c435b2f0f4f1ba\",\"dweb:/ipfs/QmWcHJQfa4M3udk2TqtL7okSJyX5wbYB3PK4jzf2vZeEUR\"]}},\"version\":1}",
@@ -39795,12 +39810,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x4F6590C245D8B500A14CB407FDf7218A8E9C661E",
-      "transactionHash": "0xa5de7122fdb188a524713e459268f92bc7208df802b6675f3b42f543bc112d4e"
+      "address": "0x8A0A28e20d8A5f9e297B3D22606CF168BD663e55",
+      "transactionHash": "0x3b7c5fc89e300b0f7fe259d9156f0a56bd4c9c16a3ea0a8249574c98d57f9b88"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-10T16:11:29.719Z",
+  "updatedAt": "2021-11-22T16:31:00.472Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
