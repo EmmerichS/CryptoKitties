@@ -6,18 +6,17 @@ var contractAddress = "0x508bA0EFC43526aC0F17F5Ddeed79Fa4Fc30F0c4";
 
 $(document).ready(function() {
 
+    instance = new web3js.eth.Contract(abi, contractAddress, {from: accounts[0]})
+    user = accounts[0];
+    console.log(instance)
 
-    window.ethereum.enable().then(function(accounts) {
-
-        
+    /*window.ethereum.enable().then(function(accounts) {
+       
         //Creating an instance of the contract
         instance = new web3js.eth.Contract(abi, contractAddress, {from: accounts[0]})
-
         user = accounts[0];
-
         console.log(instance)
         
-
         instance.events.Birth()
         .on('data', function(event) {
 
@@ -31,12 +30,11 @@ $(document).ready(function() {
         .on('error', function(error) {
             console.log(error);
         })
-        
-
-    })
+    })*/
 })
 
 function connect() {
+
     window.ethereum.enable().then(function(accounts) {
 
         //Creating an instance of the contract
