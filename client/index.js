@@ -2,13 +2,11 @@ var web3js = new Web3(Web3.givenProvider);
 
 var instance;
 var user;
-var contractAddress = "0x508bA0EFC43526aC0F17F5Ddeed79Fa4Fc30F0c4";
+var contractAddress = "0x47DB3F044fF100b6d0BA019192F3ccAfe2412541";
 
 $(document).ready(function() {
 
-    instance = new web3js.eth.Contract(abi, contractAddress, {from: accounts[0]})
-    user = accounts[0];
-    console.log(instance)
+
 
     /*window.ethereum.enable().then(function(accounts) {
        
@@ -59,5 +57,8 @@ function connect() {
             console.log(error);
         })
 
+
     })
+
+    return true;
 }

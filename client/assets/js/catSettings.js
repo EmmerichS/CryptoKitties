@@ -165,6 +165,7 @@ function createKitty() {
     var genes = getDna();
 
     console.log(genes);
+    //console.log($('#dnamouth').html());
 
     instance.methods.createKittyGen0(genes).send({}, function(error, txHash) {
         if(error) {
