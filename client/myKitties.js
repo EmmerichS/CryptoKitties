@@ -61,6 +61,9 @@ function renderAllMyCats() {
             }
         }
     })
+    .catch((error) => {
+        console.log(error);
+    })  
 }
 
 function renderMyCat(id) {
