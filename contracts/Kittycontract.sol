@@ -32,7 +32,7 @@ contract Kittycontract is IERC721, Ownable {
 
     mapping(uint256 => address) ownership;
     mapping(address => uint) tokenAmount;
-    mapping(address => Token[]) allTokensPerOwner;  //My own addition
+    mapping(address => uint[]) allTokensPerOwner;  //My own addition
     mapping(uint => address) public approveToken;
     mapping(address => mapping(address => bool)) private operatorApproval;
     
@@ -62,6 +62,7 @@ contract Kittycontract is IERC721, Ownable {
 
         allTokens.push(_newKitty);
         uint256 newKittyId = allTokens.length - 1;
+        allTokensPerOwner[msg.sender].push(newKittyId);
 
         emit Birth(_owner, newKittyId, _mumId, _dadId, _genes);
 
@@ -79,7 +80,7 @@ contract Kittycontract is IERC721, Ownable {
     }
 
     //My own addition
-    function allNFTsPerOwner() public view returns (Token[] memory) {
+    function allNFTsPerOwner() public view returns (uint[] memory) {
         return allTokensPerOwner[msg.sender];
     }
 
