@@ -2,12 +2,10 @@ var web3js = new Web3(Web3.givenProvider);
 
 var instance;
 var user;
-var contractAddress = "0xCAfB23e3278a8156a304Db72ef2A34eb9F6Ee8eE";
+var contractAddress = "0xAEBc3F9340cd9D52e6722C90c96E987F7A16b9c5";
 
 $(document).ready(function() {
     checkAccount();
-    renderAllMyCats();
-    console.log("This is from .ready()");
 })
 
 function checkAccount() {   
@@ -42,32 +40,99 @@ function connect() {
     })     
 }
 
-function renderAllMyCats() {
+async function myKitties() {
 
-    ethereum.request({ method: 'eth_requestAccounts' })
-    .then(function(accounts) {
-        instance = new web3js.eth.Contract(abi, contractAddress, {from: accounts[0]})
+    var arrayId = await instance.methods.allNFTsPerOwner().call();
 
-        console.log("This is from renderAllMyCats()")
+    for (i = 0; i < arrayId.length; i++) {
 
-        //get the owner array of all the cats
-        var ownerArray = instance.methods.allNFTsPerOwner();
+        appendKitty(arrayId[i])
 
-        //loop through array using renderMyCat() to display the cat
-        if(ownerArray > 0) {
-            for(i = 0; i < ownerArray.length; i++) {
-                let id = ownerArray[i];
-                renderMyCat(id);
-            }
-        }
-    })
-    .catch((error) => {
-        console.log(error);
-    })  
-}
-
-function renderMyCat(id) {
-
-    //This is where I need to render my cat
+    }
 
 }
+
+async function appendKitty(id) {
+
+    var kitty = await instance.methods.getKitty(id).call();
+
+    appendCat(kitty.genes, id, kitty.generation);
+
+}
+
+function appendCat(genes, id, generation){
+
+    //Notice that im using these special quotes in order to write html with break lines
+    
+      let catBox = `<div id="`+id+`">
+    
+                        <div id="cat`+id+`">
+                            <div id="body`+id+`">
+                                <div id="tummy`+id+`">
+                                    <div id="decoration`+id+`">
+                                        <div id="top_decoration`+id+`"></div>
+                                        <div id="middle_decoration`+id+`"></div>
+                                        <div id="bottom_decoration`+id+`"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="left_arm`+id+`">
+                                <div id="paw`+id+`"></div>
+                            </div>
+                            <div id="right_arm`+id+`"></div>
+                            <div id="ears`+id+`">
+                                <div class="ear left_ear`+id+`"></div>
+                                <div class="ear right_ear`+id+`"></div>
+                            </div>
+                            <div id="head`+id+`">
+                                <div id="eyes`+id+`">
+                                    <div class="eye eye_left`+id+`">
+                                        <div class="pupil left_pupil`+id+`">
+                                            <div class="pupil left_pupil2`+id+`"></div>
+                                        </div>
+                                    </div>
+                                    <div class="eye eye_right`+id+`">
+                                        <div class="pupil right_pupil`+id+`">
+                                            <div class="pupil right_pupil2`+id+`"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="mouth_area`+id+`">
+                                    <div id="nose`+id+`"></div>
+                                    <div id="mouth`+id+`">
+                                        <div id="tongue`+id+`"></div>
+                                    </div>
+                                </div>
+                                <div id="whiskers`+id+`">
+                                    <div id="whiskers_left`+id+`">
+                                        <div class="whisker`+id+`"></div>
+                                        <div class="whisker`+id+`"></div>
+                                        <div class="whisker`+id+`"></div>
+                                    </div>
+                                    <div id="whiskers_right`+id+`">
+                                        <div class="whisker`+id+`"></div>
+                                        <div class="whisker`+id+`"></div>
+                                        <div class="whisker`+id+`"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="feet`+id+`">
+                                <div id="left_foot`+id+`">
+                                        <div id="big_toe_left`+id+`"></div>
+                                        <div id="little_toe_left`+id+`"></div>
+                                </div>
+                                <div id="right_foot`+id+`">
+                                    <div id="big_toe_right`+id+`"></div>
+                                    <div id="little_toe_right`+id+`"></div>                   
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>`
+    
+       
+       document.getElementById("catBoxes").innerHTML += catBox;
+       renderCat(genes);
+    
+    }
+
