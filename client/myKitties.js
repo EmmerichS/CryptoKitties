@@ -2,7 +2,7 @@ var web3js = new Web3(Web3.givenProvider);
 
 var instance;
 var user;
-var contractAddress = "0xEc2bC529c05cA6958EcF1E1D7ae822E06Bd2c325";
+var contractAddress = "0x63f6dc7B0b12DbC2Db8371965F1dc06aDE83EeF0";
 
 $(document).ready(function() {
     checkAccount();
@@ -42,17 +42,23 @@ function connect() {
 
 async function myKitties() {
 
-    var arrayId = await instance.methods.allNFTsPerOwner().call();
+    console.log("First");
+
+    var arrayId =  instance.methods.allNFTsPerOwner().call();
+    console.log(arrayId);
 
     for (i = 0; i < arrayId.length; i++) {
 
-        appendKitty(arrayId[i])
+        console.log(arrayId);
+        appendKitty(arrayId[i]);
 
     }
 
 }
 
 async function appendKitty(id) {
+
+    console.log("Second");
 
     var kitty = await instance.methods.getKitty(id).call();
 
@@ -61,6 +67,8 @@ async function appendKitty(id) {
 }
 
 function appendCat(genes, id, generation){
+
+    console.log("third");
 
     //Notice that im using these special quotes in order to write html with break lines
     
@@ -131,7 +139,7 @@ function appendCat(genes, id, generation){
                     </div>`
     
        
-       document.getElementById("catBoxes").innerHTML += catBox;
+       document.getElementById("catBoxes").innerHTML += "Hello";
        renderCat(genes);
     
     }

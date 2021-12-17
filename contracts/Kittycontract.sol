@@ -80,8 +80,8 @@ contract Kittycontract is IERC721, Ownable {
     }
 
     //My own addition
-    function allNFTsPerOwner() public view returns (uint[] memory) {
-        return allTokensPerOwner[msg.sender];
+    function allNFTsPerOwner(address user) public view returns (uint[] memory) {
+        return allTokensPerOwner[user];
     }
 
     function totalSupply() external view returns (uint256 total) {
